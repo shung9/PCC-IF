@@ -1,0 +1,73 @@
+{% extends 'sidebar.html' %}
+
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+
+  {% if request.user.is_authenticated %}  
+
+    <center>
+
+        <h1>Suas Turmas</h1>
+      
+        <br>
+        <div class="card">
+          <div class="card-border-top">
+          </div>
+          <div class="img">
+            
+          </div>
+          <span>3 AII</span>
+          <p class="job">IF Baiano</p>
+          <a href="turmas"><button>Entrar</button></a>
+        </div>
+      
+      </center>
+      
+          <br>
+
+      
+      <br>
+
+    {% else %}
+
+    <style>
+
+      .cotainer{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+      }
+
+
+
+    </style>
+
+
+    <div class="cotainer">
+      <div class="content">
+        <center>
+        <h1>Faça login para acessar suas turmas</h1>
+        <br>
+        <a href="accounts/login">
+          <button class="entrar">
+            Entrar
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </button>
+        </a>
+        </center>
+      </div>
+    </div>
+        
+    {% endif %}
+    
+
+    
+    {% endblock %}

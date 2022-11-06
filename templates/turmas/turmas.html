@@ -1,0 +1,51 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+<title>Turma {{turma.nome}}</title>
+
+
+
+{% block links %}
+
+<style>
+.mural{display: none;}
+</style>
+
+<div id="avisos" class="mural">
+    <div id="mural">
+        <h1>avisos</h1>
+    </div> 
+</div>
+    
+
+
+<div id="atividades" class="mural">
+    <div id="mural">
+        <h1>atividades</h1>        
+    </div>
+</div>
+
+    
+
+
+<div id="trabalhos" class="mural">
+    <div id="mural">
+        <h1>trabalhos</h1>
+    </div>
+</div>
+
+    
+<div id="provas" class="mural">
+    <div id="mural">
+        <h1>provas</h1>
+    </div>
+</div>
+
+<div id="aulas" class="mural">
+    <div id="mural">
+        <h1>aulas</h1>
+    </div>
+</div>
+
+<script src="{% static 'javascript/turmas/file.js' %}"></script>
+{% endblock %}

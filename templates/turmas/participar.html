@@ -1,0 +1,33 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block card %}
+
+
+<div class="conta">
+    <div class="user">
+        <p>Você está logado com:</p>
+            <div class="perfil">
+                
+            </div>
+            {{user.username}}
+            <br>
+            {{user.email}}
+    </div>
+
+</div>
+
+<div class="conta">
+    <h5>Código da turma:</h5>
+
+    <form action="">
+        <input type="text" placeholder="Código da turma">
+    </form>
+
+
+
+</div>
+
+
+
+{% endblock %}
