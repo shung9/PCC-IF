@@ -11,7 +11,7 @@
 <body>
 
 
-	<form action="{% url 'login' %}" method="POST">
+	<form action="{% url 'accounts:login' %}" method="POST">
 		{% csrf_token %}
 			<div class="box">
 			<center>
@@ -45,8 +45,8 @@
 			</form>
 
 				<br>
-                <h3>Não tem uma conta? <a href="{% url 'registrar' %}">Criar</a></h3>
-				<h3>Esqueceu a senha? <a href="{% url 'reset_password' %}">Redefinir</a></h3>
+                <h3>Não tem uma conta? <a href="{% url 'accounts:registrar' %}">Criar</a></h3>
+				<h3>Esqueceu a senha? <a href="{% url 'accounts:reset_password' %}">Redefinir</a></h3>
 				
 			</center>
 	</div>

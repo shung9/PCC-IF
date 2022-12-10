@@ -37,10 +37,10 @@
 
   <div class="conn">
     <div class="dropleft">
-        <button class="btn" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">+</button>
+        <button class="add" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">+</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Criar nova turma</a>
-            <a class="dropdown-item" href="turmas/participar">Participar de uma turma</a>
+            <a class="dropdown-item" class="trigger" href="{% url 'turmas:participar' %}">Participar de uma turma</a>
         </div>
     </div>
 
