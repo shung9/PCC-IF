@@ -1,0 +1,81 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+
+<br>
+
+<div class="conta">
+        <p>Você está logado com:</p> 
+            <div class="perfil">{{name}}</div>
+
+            <div class="dadosUser">
+                <p>{{user.username}}</p>
+                <p>{{user.email}}</p>  
+            </div>
+
+            <div class="mudarconta">
+                <a href="{% url 'accounts:logout' %}" class="btn btn-dark">Mudar de Conta</a>
+            </div>
+</div>
+
+    <br>
+
+<div class="conta">
+    <h2>Criar turma:</h2><br>
+
+
+    <form action="">
+
+            <br>
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nome da Turma" required>
+                <br>
+                <textarea class="form-control" placeholder="Descrição" maxlength="126" rows="3"></textarea>
+                <br>
+                <div class="corInput">
+                <h5>Cor da Turma:</h5>
+                    <label for="color-input" id="pseudo-color-input"></label>
+                    <input id="color-input" type="color" onchange="mudarCor()">
+                    <h5 class="TtlH5">#534bf3</h5>
+                    </div>
+            </div>
+
+            <br><br>
+            <center>
+                <button type="submit" class="btn btn-info">Criar</button>
+                <a  class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
+
+            </center>
+
+    </form>
+
+</div>
+
+<script>
+
+    function corInicial(){
+        mudarCor();
+    }
+
+    function mudarCor(){
+        var cor = document.querySelector("#color-input").value;
+        document.querySelector("#pseudo-color-input").style.backgroundColor = cor;
+
+        var h5 = document.querySelector(".TtlH5")
+        h5.style.color = cor;
+        h5.innerHTML = cor;
+
+        
+        console.log(cor)
+    }
+
+</script>
+  
+
+
+{% endblock %}

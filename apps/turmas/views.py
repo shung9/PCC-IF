@@ -13,3 +13,9 @@ def turmas(request):
 def participar(request):
     cc = nameUser(request)
     return render(request, 'turmas/participar.html', cc)
+
+@login_required()
+def criar(request):
+    cc = nameUser(request)
+    return render(request, 'turmas/criar.html', cc)
+
