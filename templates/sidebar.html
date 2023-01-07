@@ -21,7 +21,10 @@
 
 
 <header>
-  <a href="{% url 'home' %}" style="font-size: 30px;">Logo</a>
+  <div class="logo">
+    <a href="{% url 'home' %}" style="font-size: 30px;">Logo</a>
+
+  </div>
   
   
   
@@ -31,11 +34,13 @@
   <nav>
       <ul class="nav_link">
         <strong>
+          <div class="responsivo">
           <li onclick="tabs('avisos', 'av')" id="av">Avisos</li>
           <li onclick="tabs('atividades', 'att')" id="att">Atividades</li>
           <li onclick="tabs('trabalhos', 'tr')" id="tr">Trabalhos</li>
           <li onclick="tabs('provas', 'pr')" id="pr">Provas</li>
           <li onclick="tabs('aulas', 'al')" id="al">Aulas</li>
+        </div>
         </strong>
       </ul>
   </nav>
