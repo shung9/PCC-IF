@@ -53,7 +53,7 @@ def registrar(request):
 
     messages.success(request, 'cadastrado realizado! faça login')
     
-    return redirect('login')
+    return redirect('accounts:login')
     
     
 

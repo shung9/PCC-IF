@@ -10,7 +10,7 @@
 
 <div class="conta">
         <p>Você está logado com:</p> 
-            <div class="perfil">{{name}}</div>
+            <div class="perfil">{{nameUser.name}}</div>
 
             <div class="dadosUser">
                 <p>{{user.username}}</p>
@@ -28,31 +28,22 @@
     <h2>Criar turma:</h2><br>
 
 
-    <form action="">
+    <form action="{% url 'turmas:criar' %}" method="POST">
+        {% csrf_token %}
 
             <br>
 
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nome da Turma" required>
-                <br>
-                <textarea class="form-control" placeholder="Descrição" maxlength="126" rows="3"></textarea>
-                <br>
-                <div class="corInput">
-                <h5>Cor da Turma:</h5>
-                    <label for="color-input" id="pseudo-color-input"></label>
-                    <input id="color-input" type="color" onchange="mudarCor()">
-                    <h5 class="TtlH5">#534bf3</h5>
-                    </div>
-            </div>
+            {{form.as_p}}
 
             <br><br>
+        
             <center>
                 <button type="submit" class="btn btn-info">Criar</button>
                 <a  class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
 
             </center>
-
-    </form>
+ </form>
+   
 
 </div>
 

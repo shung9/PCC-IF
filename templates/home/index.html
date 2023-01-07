@@ -13,16 +13,22 @@
         <h1>Suas Turmas</h1>
       
         <br>
-        <div class="card">
-          <div class="card-border-top">
+
+        {% for turma in turmas %}
+        <div class="lado_da_outra">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            <div class="img">
+              
+            </div>
+            <span>{{ turma.nome }}</span>
+            <p class="job">{{ turma.descricao }}</p>
+            <a href="turmas"><button>Entrar</button></a>
           </div>
-          <div class="img">
-            
-          </div>
-          <span>3 AII</span>
-          <p class="job">IF Baiano</p>
-          <a href="turmas"><button>Entrar</button></a>
         </div>
+
+        {% endfor %}
       
       </center>
       

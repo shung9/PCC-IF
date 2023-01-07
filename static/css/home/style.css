@@ -60,6 +60,11 @@
 
 
  /* Card de Turmas */
+
+ .lado_da_outra{
+  display: inline-block;
+  justify-content: space-between;
+ }
  
 .card {
   width: 190px;
@@ -91,7 +96,8 @@
   color: white;
   display: block;
   text-align: center;
-  padding-top: 3px;
+  padding-top: 30px;
+  margin: 0;
   font-size: 12px;
  }
  
@@ -107,16 +113,21 @@
  .card button {
   padding: 8px 25px;
   display: block;
-  margin: auto;
   border-radius: 8px;
   border: none;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
   background: #6b64f3;
   color: white;
   font-weight: 600;
   cursor: pointer;
  }
+
+ .card a{
+  margin: 0;
+  padding: 0;
+ }
+
  
  .card button:hover {
   background: #534bf3;

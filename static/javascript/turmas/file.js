@@ -11,15 +11,19 @@ function none(a, b, c, d){
     b.style.display = 'none'
     c.style.display = 'none'
     d.style.display = 'none'
+    
 };
 
 
-function block(id){
-    document.getElementById(id).style.display = 'block'
+function block(id, chave){
+    var element = document.getElementById(id)
+    var chave = document.getElementById(chave)
+    element.setAttribute('style', 'display: block;');
 };
 
 function tabs(id)
 {   
+
     if(id == 'avisos')
         none(att, tr, pr, au)
         block(id)
@@ -44,5 +48,12 @@ function tabs(id)
         block(id)
     
 };
+
+
+
+
+
+
+
 
 
