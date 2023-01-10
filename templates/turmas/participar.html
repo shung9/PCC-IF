@@ -29,9 +29,10 @@
     <p>Digite o código da turma para fazer parte dela</p>
     <br><br>
 
-    <form action="">
+    <form action="{% url 'turmas:participar' %}" method="POST">
+        {% csrf_token %}
 
-            <input type="text" class="form-control" placeholder="código da turma" style="text-transform: uppercase;">
+            <input type="text" name="busca" class="form-control" placeholder="código da turma" style="text-transform: uppercase;">
             <br><br>
             <center>
                 <button type="submit" class="btn btn-info">Participar</button>

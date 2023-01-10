@@ -15,6 +15,17 @@ def turmas(request):
 @login_required()
 def participar(request):
     cc = nameUser(request)
+
+    if request.method == 'POST':
+        busca = request.POST.get('busca')
+        turma = Turma.objects.get(codigo=busca)
+
+        turma.participantes.add(request.user)
+        return redirect('home')
+
+    else:
+        return render(request, 'turmas/participar.html', cc)    
+
     return render(request, 'turmas/participar.html', cc)
 
 
@@ -34,14 +45,13 @@ def criar(request):
         cdg = ''.join(random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for x in range(5))
 
         while Turma.objects.filter(codigo = cdg).exists(): 
-            print('existe')
             cdg = ''.join(random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for x in range(5))
             print(cdg)
 
         else:
             obj.codigo = cdg
+            obj.adm = request.user
             obj.save()
-            print('cabou')
             
         return redirect('home')
     
