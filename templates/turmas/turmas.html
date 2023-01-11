@@ -21,7 +21,12 @@
 
 <div id="atividades" class="mural">
     <div id="mural">
-        <h1>atividades</h1>        
+       
+        {% for atividade in atividades %}
+            <h1>{{ atividade.nome }}</h1>
+        {% endfor %}
+        
+
     </div>
 </div>
 

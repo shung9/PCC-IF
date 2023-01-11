@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from home.views import nameUser
-from .models import Turma
+from .models import Turma, Post
 from .forms import CriarTurma
 import random, string
 
@@ -10,7 +10,12 @@ import random, string
 @login_required()
 def turmas(request):
     cc = nameUser(request)
-    return render(request, 'turmas/turmas.html', cc)
+
+    atividade = Post.objects.filter(tipo='atividade')
+    print(atividade)
+
+    context = {'atividades': atividade, 'user': cc}
+    return render(request, 'turmas/turmas.html', context)
 
 @login_required()
 def participar(request):
