@@ -71,7 +71,16 @@ header {
     transition: 0.5s;
   }
   
-  
+  .mural {
+    display: none;
+  }
+  .mural {
+    display: block;
+  }
+
+  .nav_link li.ativa {
+    color: red;
+  }
   .add {
     height: 45px;
     line-height: 10px;  

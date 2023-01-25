@@ -35,11 +35,12 @@
       <ul class="nav_link">
         <strong>
           <div class="responsivo">
-          <li onclick="tabs('avisos', 'av')" id="av" class="selc">Avisos</li>
-          <li onclick="tabs('atividades', 'att')" id="att" class="selc">Atividades</li>
-          <li onclick="tabs('trabalhos', 'tr')" id="tr" class="selc">Trabalhos</li>
-          <li onclick="tabs('provas', 'pr')" id="pr" class="selc">Provas</li>
-          <li onclick="tabs('aulas', 'al')" id="al" class="selc">Aulas</li>
+            <!--O this aqui tem o valor do objeto que voce passou na função tabs-->
+          <li onclick="tabs('avisos', this)" id="av" class="selc">Avisos</li>
+          <li onclick="tabs('atividades', this)" id="att" class="selc">Atividades</li>
+          <li onclick="tabs('trabalhos', this)" id="tr" class="selc">Trabalhos</li>
+          <li onclick="tabs('provas', this)" id="pr" class="selc">Provas</li>
+          <li onclick="tabs('aulas', this)" id="al" class="selc">Aulas</li>
         </div>
         </strong>
       </ul>
