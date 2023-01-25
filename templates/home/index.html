@@ -29,8 +29,8 @@
 
             </div>
             <span>{{ turma.nome }}</span>
-            <p class="job">{{ turma.descricao }}</p>
-            <a href="turmas"><button>Entrar</button></a>
+            <p class="job">{{ turma }}</p>
+            <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
           </div>
         </div>
 
@@ -47,7 +47,7 @@
             </div>
             <span>{{ turma.nome }}</span>
             <p class="job">{{ turma.descricao }}</p>
-            <a href="turmas"><button>Entrar</button></a>
+            <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
           </div>
         </div>
 

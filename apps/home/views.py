@@ -22,6 +22,6 @@ def home(request):
         return render(request, 'home/index.html') 
         
 
-    context = {'turmasadm': adm, 'turmaspart': participantes, 'user': user}
+    context = {'turmasadm': adm, 'turmaspart': participantes, 'nameUser': user}
     return render(request, 'home/index.html', context)
 

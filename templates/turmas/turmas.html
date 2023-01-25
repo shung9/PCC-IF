@@ -12,7 +12,17 @@
 
 <div id="avisos" class="mural">
     <div id="mural">
-        <h1>avisos</h1>
+
+        {% for aviso in avisos %}
+
+            <h1>{{ aviso.nome }}</h1>
+
+        {% empty %}
+
+            <h1>Não existe nenhum aviso</h1>
+
+        {% endfor %}
+
     </div> 
 </div>
     
@@ -22,7 +32,13 @@
     <div id="mural">
        
         {% for atividade in atividades %}
+
             <h1>{{ atividade.nome }}</h1>
+
+        {% empty %}
+
+            <h1>Não existe nenhum atividade</h1>
+
         {% endfor %}
         
 
@@ -34,14 +50,34 @@
 
 <div id="trabalhos" class="mural">
     <div id="mural">
-        <h1>trabalhos</h1>
+
+        {% for trabalho in trabalhos %}
+
+            <h1>{{ trabalho.nome }}</h1>
+
+        {% empty %}
+
+            <h1>Não existe nenhum trabalho</h1>
+
+        {% endfor %}
+
     </div>
 </div>
 
     
 <div id="provas" class="mural">
     <div id="mural">
-        <h1>provas</h1>
+
+        {% for prova in provas %}
+
+            <h1>{{ prova.nome }}</h1>
+
+        {% empty %}
+
+            <h1>Não existe nenhum prova</h1>
+
+        {% endfor %}
+
     </div>
 </div>
 

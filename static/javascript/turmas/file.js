@@ -1,59 +1,26 @@
-var av = document.getElementById('avisos')
-var att = document.getElementById('atividades')
-var tr = document.getElementById('trabalhos')
-var pr = document.getElementById('provas')
-var au = document.getElementById('aulas')
+var av = document.getElementById('avisos'),
+    att = document.getElementById('atividades'),
+    tr = document.getElementById('trabalhos'),
+    pr = document.getElementById('provas'),
+    au = document.getElementById('aulas');
 
-document.getElementById('avisos').style.display = 'block'
+document.getElementById('avisos').style.display = 'block';
 
-function none(a, b, c, d){
-    a.style.display = 'none'
-    b.style.display = 'none'
-    c.style.display = 'none'
-    d.style.display = 'none'
-    
+function none(a, b, c, d) {
+    a.style.display = 'none';
+    b.style.display = 'none';
+    c.style.display = 'none';
+    d.style.display = 'none';
 };
 
-
-function block(id, chave){
-    var element = document.getElementById(id)
-    var chave = document.getElementById(chave)
-    element.setAttribute('style', 'display: block;');
+function block(id) {
+    document.getElementById(id).style.display = 'block';
 };
 
-function tabs(id)
-{   
-
-    if(id == 'avisos')
-        none(att, tr, pr, au)
-        block(id)
-
-
-    if(id == 'atividades')
-        none(av, tr, pr, au)
-        block(id)
-    
-
-    if(id == 'trabalhos')
-        none(av, att, pr, au)
-        block(id)
-
-
-    if(id == 'provas')
-        none(av, att, tr, au)
-        block(id)
-
-    if(id == 'aulas')
-        none(av, att, tr, pr)
-        block(id)
-    
-};
-
-
-
-
-
-
-
-
-
+function tabs(id) {
+    var elements = [av, att, tr, pr, au];
+    elements.forEach(elem => {
+        if (elem.id !== id) elem.style.display = 'none';
+    });
+    block(id);
+}

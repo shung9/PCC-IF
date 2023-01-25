@@ -7,15 +7,24 @@ import random, string
 
 
 
+
 @login_required()
-def turmas(request):
+def turmas(request, codigo):
     cc = nameUser(request)
 
-    atividade = Post.objects.filter(tipo='atividade')
-    print(atividade)
+    turma = Turma.objects.get(codigo=codigo)
+    posts = Post.objects.filter(turmaPertecente=turma)
 
-    context = {'atividades': atividade, 'user': cc}
+    context = {
+        'nameUser': cc,
+        'avisos': posts.filter(tipo='aviso'), 
+        'atividades': posts.filter(tipo='atividade'),
+        'trabalhos': posts.filter(tipo='trabalho'),
+        'provas': posts.filter(tipo='prova')
+    }
+
     return render(request, 'turmas/turmas.html', context)
+
 
 @login_required()
 def participar(request):
@@ -29,9 +38,9 @@ def participar(request):
         return redirect('home')
 
     else:
-        return render(request, 'turmas/participar.html', cc)    
+        return render(request, 'turmas/participar.html', {'nameUser': cc})    
 
-    return render(request, 'turmas/participar.html', cc)
+    return render(request, 'turmas/participar.html', {'nameUser': cc})
 
 
 @login_required()
