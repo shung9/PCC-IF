@@ -14,7 +14,7 @@ function none(a, b, c, d) {
     d.style.display = 'none';
 };
 
-function block(id) {
+function block(id, tabid, el) {
     document.getElementById(id).style.display = 'block';
 };
 

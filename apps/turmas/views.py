@@ -20,10 +20,12 @@ def turmas(request, codigo):
         'avisos': posts.filter(tipo='aviso'), 
         'atividades': posts.filter(tipo='atividade'),
         'trabalhos': posts.filter(tipo='trabalho'),
-        'provas': posts.filter(tipo='prova')
+        'provas': posts.filter(tipo='prova'),
     }
 
     return render(request, 'turmas/turmas.html', context)
+
+
 
 
 @login_required()
@@ -72,4 +74,3 @@ def criar(request):
 
     context = {'form': CriarTurma, 'nameUser': cc}
     return render(request, 'turmas/criar.html', context)
-

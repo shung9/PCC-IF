@@ -16,8 +16,9 @@ class Turma(models.Model):
     participantes = models.ManyToManyField(User, related_name='participantes', null = True, blank = True)
 
     def __str__(self):
-        return self.nome   
+        return self.nome 
 
+        
 class Post(models.Model):
     tipo = models.CharField(max_length = 10, null = False, blank = False)
     nome = models.CharField(max_length = 50, null = False, blank = False)

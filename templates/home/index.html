@@ -23,13 +23,15 @@
           <div class="img">
             <div class="card-content">
               
-            <div class="image">{{ turma.nome }}</div>
+            <div class="image">
+              <h1>{{ turma.nome }}</h1>
+            </div>
             
           </div>
 
             </div>
-            <span>{{ turma.nome }}</span>
-            <p class="job">{{ turma }}</p>
+            <span>{{ turma.descricao }}</span>
+            
             <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
           </div>
         </div>
