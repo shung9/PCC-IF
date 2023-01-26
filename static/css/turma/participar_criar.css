@@ -1,17 +1,15 @@
 
-.conta {
-    border: 3px solid var(--primary-color);
+.conta{
+    border: 1px solid var(--primary-color);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-left: 30%;
     margin-right: 30%;
     line-height: 0.5em;
-    
   }
   
-
   .conta button{
-    background-color: #1A73E8;
+    background-color: #138496;
     color: #F3F4F4;
     border: 0;
   }

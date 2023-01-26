@@ -1,6 +1,8 @@
 {% extends 'sidebar.html' %}
 {% load static %}
 
+
+
 <title>Turma {{turma.nome}}</title>
 
 
@@ -10,8 +12,29 @@
 .mural{display: none;}
 </style>
 
+<div class="content">
+
+    <div class="dropdown">
+        <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'svg/create.svg' %}">
+                   Criar
+        </button>
+        
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item aviso" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
+            <a class="dropdown-item" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/activity.svg' %}"> atividade</a>
+            <a class="dropdown-item trabalho" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/work.svg' %}">Trabalho</a>
+            <a class="dropdown-item" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/proof.svg' %}">Prova</a>
+        </div>
+    </div>
+
+
+
+
 <div id="avisos" class="mural">
     <div id="mural">
+
+
 
         {% for aviso in avisos %}
 
@@ -37,7 +60,7 @@
 
         {% empty %}
 
-            <h1>Não existe nenhuma atividade</h1>
+            <h1>Não existe nenhum atividade</h1>
 
         {% endfor %}
         
@@ -74,7 +97,7 @@
 
         {% empty %}
 
-            <h1>Não existe nenhuma prova</h1>
+            <h1>Não existe nenhum prova</h1>
 
         {% endfor %}
 
@@ -85,6 +108,8 @@
     <div id="mural">
         <h1>aulas</h1>
     </div>
+</div>
+
 </div>
 
 <script src="{% static 'javascript/turmas/file.js' %}"></script>

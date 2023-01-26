@@ -14,8 +14,9 @@
     <!--CSS DE HOME--> 
     <link rel="stylesheet" href="{% static 'css/home/style.css' %}">
 
-    <!--CSS DE CRIAR/PARTICIPAR NOVA TURMA-->
+    <!--CSS DE TURMAS-->
     <link rel="stylesheet" href="{% static 'css/turma/participar_criar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/turma/turma.css' %}">
   </head>
 <body>
 
@@ -36,11 +37,11 @@
         <strong>
           <div class="responsivo">
             <!--O this aqui tem o valor do objeto que voce passou na função tabs-->
-          <li onclick="tabs('avisos', this)" id="av" class="selc">Avisos</li>
-          <li onclick="tabs('atividades', this)" id="att" class="selc">Atividades</li>
-          <li onclick="tabs('trabalhos', this)" id="tr" class="selc">Trabalhos</li>
-          <li onclick="tabs('provas', this)" id="pr" class="selc">Provas</li>
-          <li onclick="tabs('aulas', this)" id="al" class="selc">Aulas</li>
+          <li onclick="tabs('avisos', 'av')" id="av" class="nav-link">Avisos</li>
+          <li onclick="tabs('atividades', 'att')" id="att" class="nav-link">Atividades</li>
+          <li onclick="tabs('trabalhos', 'tr')" id="tr" class="nav-link">Trabalhos</li>
+          <li onclick="tabs('provas', 'pr')" id="pr" class="nav-link">Provas</li>
+          <li onclick="tabs('aulas', 'al')" id="al" class="nav-link">Aulas</li>
         </div>
         </strong>
       </ul>

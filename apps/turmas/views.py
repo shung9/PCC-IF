@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from home.views import nameUser
 from .models import Turma, Post
-from .forms import CriarTurma
+from .forms import CriarTurma, criarPost
 import random, string
 
 
@@ -20,12 +20,20 @@ def turmas(request, codigo):
         'avisos': posts.filter(tipo='aviso'), 
         'atividades': posts.filter(tipo='atividade'),
         'trabalhos': posts.filter(tipo='trabalho'),
-        'provas': posts.filter(tipo='prova'),
+        'provas': posts.filter(tipo='prova')
     }
 
     return render(request, 'turmas/turmas.html', context)
 
 
+@login_required()
+def criarPost(request):
+    cc = nameUser(request)
+
+
+
+    context = {"nameUser": cc}
+    return render(request, 'turmas/criarPost.html', context)
 
 
 @login_required()
@@ -74,3 +82,4 @@ def criar(request):
 
     context = {'form': CriarTurma, 'nameUser': cc}
     return render(request, 'turmas/criar.html', context)
+

@@ -29,12 +29,9 @@ p{color: #f0f8ff;}
 
 a{text-decoration: none;}
 
-.image h1{
-  color: var(--background-sidebar);
-}
 
 h1, h2, h3, h4, h5{
-  color: var(--primary-color);
+  color: var(--primary-color)
 }
 
 
@@ -46,6 +43,10 @@ header {
     background-color: var(--background-sidebar);
     height: 5em;
     border-bottom: 0.5px solid var(--primary-color);
+    }
+
+.active {
+    color: red;
     }
 
 
@@ -81,9 +82,7 @@ header {
     display: block;
   }
 
-  .nav_link li.ativa {
-    color: red;
-  }
+
   .add {
     height: 45px;
     line-height: 10px;  
@@ -139,10 +138,6 @@ header {
     border-radius: 50%;
     border: #534bf3 2px solid;
     transition: 0.3s;
-  }
-
-  .marked{
-    color: red;
   }
 
 

@@ -1,0 +1,39 @@
+.content{
+    margin: 10px 135px;
+}
+
+.createAviso{
+    background-color: var(--primary-color); 
+
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+
+    margin: 7px;
+    padding: 5px 15px;
+    padding-left: 5px;
+    border-radius: 20px;
+    border: none;
+    
+
+    align-items: center;
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.createAviso:hover{
+    background-color: var(--hover-color);
+}
+
+.dropdown-menu{
+    margin-top: 10px;
+}
+
+.trabalho{
+    margin-left: 2px;
+}
+
+.aviso img, .trabalho img{
+    margin-right: 2px;
+}
