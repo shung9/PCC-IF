@@ -6,7 +6,14 @@
 
 {% block card %}
 
-    <form action="{% url 'turmas:criarPost' %}" method="POST"></form>
+    <form method='POST'>
+        {% csrf_token %}
+        {{ formPost.as_p }}
+
+
+
+        <button type="submit">salvar</button>
+    </form>
 
 
 {% endblock %}

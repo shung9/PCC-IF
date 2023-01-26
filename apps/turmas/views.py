@@ -20,19 +20,42 @@ def turmas(request, codigo):
         'avisos': posts.filter(tipo='aviso'), 
         'atividades': posts.filter(tipo='atividade'),
         'trabalhos': posts.filter(tipo='trabalho'),
-        'provas': posts.filter(tipo='prova')
+        'provas': posts.filter(tipo='prova'),
+        'turma': turma
     }
 
     return render(request, 'turmas/turmas.html', context)
 
+    
+    
+
 
 @login_required()
-def criarPost(request):
+def novoPost(request, codigo, tipo):
     cc = nameUser(request)
 
+    formPost = criarPost()
+    turma = Turma.objects.get(codigo=codigo)
+    
+
+    if request.method == 'POST':
+        formPost = criarPost(request.POST)        
+        
+        if formPost.is_valid():
+            obj = formPost.save(commit=False)
+            obj.turmaPertecente = turma
+            obj.tipo = tipo
+            obj.save()
+            return redirect('turmas:turmas', codigo=codigo)
+            
+        else:
+            formPost = criarPost()
+
+    else:
+        formPost = criarPost()
 
 
-    context = {"nameUser": cc}
+    context = {'formPost': formPost, 'nameUser': cc, 'turma': turma}
     return render(request, 'turmas/criarPost.html', context)
 
 

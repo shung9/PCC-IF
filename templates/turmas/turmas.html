@@ -14,6 +14,8 @@
 
 <div class="content">
 
+    {% if request.user == turma.adm %}
+
     <div class="dropdown">
         <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src="{% static 'svg/create.svg' %}">
@@ -21,12 +23,14 @@
         </button>
         
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item aviso" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
-            <a class="dropdown-item" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/activity.svg' %}"> atividade</a>
-            <a class="dropdown-item trabalho" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/work.svg' %}">Trabalho</a>
-            <a class="dropdown-item" href="{% url 'turmas:criarPost' %}"><img src="{% static 'svg/proof.svg' %}">Prova</a>
+            <a class="dropdown-item aviso" href="{% url 'turmas:criarPost' turma.codigo 'aviso' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
+            <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'atividade' %}"><img src="{% static 'svg/activity.svg' %}"> atividade</a>
+            <a class="dropdown-item trabalho" href="{% url 'turmas:criarPost' turma.codigo 'trabalho' %}"><img src="{% static 'svg/work.svg' %}">Trabalho</a>
+            <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'prova' %}"><img src="{% static 'svg/proof.svg' %}">Prova</a>
         </div>
     </div>
+
+    {% endif %}
 
 
 
@@ -36,7 +40,7 @@
 
 
 
-        {% for aviso in avisos %}
+        {% for aviso in avisos reversed %}
 
             <h1>{{ aviso.nome }}</h1>
 
@@ -54,7 +58,7 @@
 <div id="atividades" class="mural">
     <div id="mural">
        
-        {% for atividade in atividades %}
+        {% for atividade in atividades reversed %}
 
             <h1>{{ atividade.nome }}</h1>
 
@@ -74,7 +78,7 @@
 <div id="trabalhos" class="mural">
     <div id="mural">
 
-        {% for trabalho in trabalhos %}
+        {% for trabalho in trabalhos reversed %}
 
             <h1>{{ trabalho.nome }}</h1>
 
@@ -91,7 +95,7 @@
 <div id="provas" class="mural">
     <div id="mural">
 
-        {% for prova in provas %}
+        {% for prova in provas reversed %}
 
             <h1>{{ prova.nome }}</h1>
 
