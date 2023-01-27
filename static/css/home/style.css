@@ -89,6 +89,7 @@ center .image {
   border-radius: 20px;
   margin:100px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-bottom-width: 0px;
  }
  
 
@@ -107,6 +108,8 @@ center .image {
   border-radius: 50%;
   
 }
+
+
 
 .card .card-border-top {
   width: 60%;
@@ -127,7 +130,7 @@ center .image {
  
 
  .card .job {
-  font-weight: 400;
+  font-weight: bold;
   color: white;
   display: block;
   text-align: center;
@@ -149,6 +152,12 @@ center .image {
   color: white;
   font-weight: 600;
   cursor: pointer;
+  animation: press 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+ }
+
+ .card button:active{
+    transform: scale(0.9);
  }
 
  .card a{
@@ -160,3 +169,16 @@ center .image {
  .card button:hover {
   background: #24232b;
  }
+
+ .image{
+    font-size: 2.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+ }
+
+  .job{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+
+/* dropdown*/
+

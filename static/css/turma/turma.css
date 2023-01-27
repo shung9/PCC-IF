@@ -21,6 +21,12 @@
     text-align: center;
 
     transition: 0.3s;
+    animation: press 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.createAviso:active{
+    transform: scale(0.9);
 }
 
 .createAviso:hover{
