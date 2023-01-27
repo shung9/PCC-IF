@@ -22,3 +22,18 @@ function tabs(id) {
     block(id);
 
   }
+
+
+var buttonCopy = document.getElementById("copiar");
+var textcopy = document.getElementById('textcopy').innerHTML;
+
+
+buttonCopy.addEventListener("click", function(){
+    navigator.clipboard.writeText(textcopy);
+    var txt = document.getElementById("copiando")
+    txt.innerHTML = "Copiado"
+     setTimeout(function(){
+        txt.innerHTML = "copiar";
+     }, 3000)
+    
+});

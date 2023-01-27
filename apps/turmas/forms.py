@@ -1,5 +1,6 @@
 from django import forms
 from .models import Turma, Post
+from tinymce.widgets import TinyMCE
 
 class CriarTurma(forms.ModelForm):
     class Meta:

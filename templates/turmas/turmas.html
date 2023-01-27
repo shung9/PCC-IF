@@ -14,21 +14,50 @@
 
 <div class="content">
 
-    {% if request.user == turma.adm %}
+        {% if request.user == turma.adm %}
 
-    <div class="dropdown">
-        <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="{% static 'svg/create.svg' %}">
-                   Criar
-        </button>
-        
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item aviso" href="{% url 'turmas:criarPost' turma.codigo 'aviso' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
-            <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'atividade' %}"><img src="{% static 'svg/activity.svg' %}"> atividade</a>
-            <a class="dropdown-item trabalho" href="{% url 'turmas:criarPost' turma.codigo 'trabalho' %}"><img src="{% static 'svg/work.svg' %}">Trabalho</a>
-            <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'prova' %}"><img src="{% static 'svg/proof.svg' %}">Prova</a>
+    <div class="dropdowns">
+        <div class="conteinerCodigo">
+            <div class="cdgTurma">
+                <p>Código da Turma:</p>
+                <span id="textcopy">{{ turma.codigo }}</span>
+            </div>
+
+            <button class="createAviso copiar" id="copiar">
+                <img src="{% static 'svg/copy.svg' %}">
+                <div id="copiando">
+                    Copiar
+                </div>
+                
+            </button>
         </div>
+
+            <div class="dropdown">
+                <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{% static 'svg/create.svg' %}">
+                        Criar
+                </button>
+                
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item aviso" href="{% url 'turmas:criarPost' turma.codigo 'aviso' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
+                    <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'atividade' %}"><img src="{% static 'svg/activity.svg' %}"> atividade</a>
+                    <a class="dropdown-item trabalho" href="{% url 'turmas:criarPost' turma.codigo 'trabalho' %}"><img src="{% static 'svg/work.svg' %}">Trabalho</a>
+                    <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'prova' %}"><img src="{% static 'svg/proof.svg' %}">Prova</a>
+                </div>
+            </div>
+
+            <div class="dropdown editar">
+                <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{% static 'svg/gear.svg' %}">
+                        Editar
+                </button>
+                    
+                <div class="dropdown-menu aditarTurmaBotão" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item aditarTurma" href="{% url 'turmas:criarPost' turma.codigo 'aviso' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
+                    </div>
+                </div>
     </div>
+
 
     {% endif %}
 
@@ -112,6 +141,8 @@
     <div id="mural">
         <h1>aulas</h1>
     </div>
+</div>
+
 </div>
 
 </div>
