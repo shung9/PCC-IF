@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from home.views import nameUser
-from .models import Turma, Post
+from .models import Turma, Post, Comentarios
 from .forms import CriarTurma, criarPost
 import random, string
 
@@ -105,4 +105,25 @@ def criar(request):
 
     context = {'form': CriarTurma, 'nameUser': cc}
     return render(request, 'turmas/criar.html', context)
+
+
+@login_required()
+def listarPost(request, codigo, id):
+    cc = nameUser(request)
+
+    listaPost = Post.objects.get(id=id)
+
+    if request.method == 'POST':
+        coment = request.POST.get('coment')
+
+        novoComentario = Comentarios(post = listaPost, comentario = coment, dono = request.user)
+        novoComentario.save()
+
+
+    context = {'nameUser': cc, 
+                'post': listaPost,
+                'comentarios': Comentarios.objects.filter(post = listaPost)}
+
+    
+    return render(request, 'turmas/post.html', context)
 

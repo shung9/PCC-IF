@@ -70,7 +70,7 @@
 
 
         {% for aviso in avisos reversed %}
-
+        <a href="{% url 'turmas:post' turma.codigo aviso.id %}">
         <div class="cardInformacoes">
             <div class="info">
                 <div class="activity">
@@ -82,6 +82,7 @@
                     <p class="data">{{ aviso.criacao }}</p>
                 </div>
             </div>
+        </a>
 
             <div class="hamburger">
                 <a href="">
@@ -106,7 +107,7 @@
     <div id="mural">
        
         {% for atividade in atividades %}
-
+        <a href="{% url 'turmas:post' turma.codigo atividade.id %}">
         <div class="cardInformacoes">
             <div class="info">
                 <div class="activity">
@@ -124,7 +125,7 @@
             </div>
                 
         </div>
-
+        </a>
         {% empty %}
 
             <h1>Não existe nenhum atividade</h1>

@@ -9,4 +9,5 @@ urlpatterns = [
     path('criar', views.criar, name="criar"),
     path('<str:codigo>', views.turmas, name='turmas'),
     path('<str:codigo>/<str:tipo>/novopost', views.novoPost, name="criarPost"),
+    path('<str:codigo>/<int:id>', views.listarPost, name='post'),
 ]

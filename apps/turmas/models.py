@@ -18,6 +18,7 @@ class Post(models.Model):
     tipo = models.CharField(max_length = 10, null = False, blank = False)
     nome = models.CharField(max_length = 50, null = False, blank = False)
     descricao = models.TextField(max_length = 250, null = True, blank = True)
+    valor = models.CharField(max_length = 10, null = True, blank = True)
     dataEntrega = models.DateField(null = True, blank = True)
     anexo = models.FileField(null = True, blank = True)
     turmaPertecente = models.ForeignKey(Turma, on_delete=models.CASCADE, null=True)
@@ -26,4 +27,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Comentarios(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    comentario = models.TextField(max_length = 240, null = True, blank = True)
+    dono = models.ForeignKey(User, on_delete=models.SET_NULL, null = True) 
+
     

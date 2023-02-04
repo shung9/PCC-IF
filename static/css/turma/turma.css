@@ -131,7 +131,7 @@
 
 .text{
     display: block;
-    line-height: 0.6;
+    line-height: 1.2;
     margin: 0;
     padding: 0;
 }
@@ -142,7 +142,7 @@
     color: #fff;
 }
 
-.data{
+.data, .valor, .dataEntrega{
     margin: 0;
 }
 

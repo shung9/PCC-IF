@@ -1,0 +1,79 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+
+
+<div class="content">
+    <div class="informacoes">
+        <div class="infoPost">
+            <div class="activity">
+                <img src="{% static 'svg/activity.svg' %}">
+            </div>
+    
+            <div class="text">
+                <p class="nome">{{ post.nome }}</p>
+                <p class="data">{{ post.criacao }}</p>
+
+                {% if post.tipo == 'atividade' %}
+                <p class="valor">Valor: {{ post.valor }}</p>
+                <div class="entrega">
+                    <p class="dataEntrega">Entrega: {{ post.dataEntrega }}</p>
+                </div>
+                {% endif %}
+                
+
+              
+                    <div class="descricao">
+                        <span class="textDescricao">
+                            {{ post.descricao }}
+                        </span> 
+                    </div>
+
+                    <div class="novoComentario">
+                        <div class="perfil">
+                            {{ nameUser.name }}
+                        </div>
+
+
+                            
+                            <input type="text" placeholder="Adicionar comentário para a turma">
+                              
+ 
+
+                    </div>
+
+                    
+                    {% for comentario in comentarios %}
+                    <div class="comentarios">
+                            
+                            <div class="perfil">
+                                {{ comentario.dono|upper|slice:":2" }}
+                            </div>
+
+
+                            <div class="comentario">    
+                                <p class="valor">{{ comentario.dono }}</p>
+                                <p class="coment">{{ comentario.comentario }}</p>
+                            </div>
+                            
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+
+            </div>
+
+            <div class="anexo">
+                <span class="nome">Anexo</span>
+            </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
