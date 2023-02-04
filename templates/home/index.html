@@ -16,22 +16,24 @@
 
         {% for turma in turmasadm %}
         <div class="lado_da_outra">
-          <div class="card">
-            <div class="card-border-top">
+
+          <div class="cardTurmas">
+
+            <div class="circle">
+              <span class="circleNome">{{ turma.nome|slice:":2"|upper }}</span>
             </div>
 
-          <div class="img">
-            <div class="card-content">
-              
-            <div class="image">{{ turma.nome }}</div>
-            
-          </div>
+            <div class="cardLeft">
+
+              <div class="cardNome">
+                <span>{{ turma.nome }}</span>
+                <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
+              </div>
 
             </div>
-            
-            <p class="job">{{ turma.descricao }}</p>
-            <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
-          </div>
+
+        </div>
+
         </div>
 
         {% endfor %}
@@ -39,17 +41,26 @@
 
         {% for turma in turmaspart %}
         <div class="lado_da_outra">
-          <div class="card">
-            <div class="card-border-top">
+
+          <div class="cardTurmas">
+
+            <div class="circle">
+              <span class="circleNome">{{ turma.nome|slice:":2"|upper }}</span>
             </div>
-            <div class="img">
-              
+
+            <div class="cardLeft">
+
+              <div class="cardNome">
+                <span>{{ turma.nome }}</span>
+                <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
+              </div>
+
             </div>
-            <span>{{ turma.nome }}</span>
-            <p class="job">{{ turma.descricao }}</p>
-            <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
-          </div>
+
         </div>
+
+        </div>
+
 
         {% endfor %}
       

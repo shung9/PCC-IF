@@ -71,7 +71,25 @@
 
         {% for aviso in avisos reversed %}
 
-            <h1>{{ aviso.nome }}</h1>
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ aviso.nome }}</p>
+                    <p class="data">{{ aviso.criacao }}</p>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <a href="">
+                <img src="{% static 'svg/hamburger.svg' %}">
+                </a>
+            </div>
+                
+        </div>
 
         {% empty %}
 
@@ -87,9 +105,25 @@
 <div id="atividades" class="mural">
     <div id="mural">
        
-        {% for atividade in atividades reversed %}
+        {% for atividade in atividades %}
 
-            <h1>{{ atividade.nome }}</h1>
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ atividade.nome }}</p>
+                    <p class="data">{{ atividade.criacao }}</p>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <img src="{% static 'svg/hamburger.svg' %}">
+            </div>
+                
+        </div>
 
         {% empty %}
 
@@ -109,7 +143,25 @@
 
         {% for trabalho in trabalhos reversed %}
 
-            <h1>{{ trabalho.nome }}</h1>
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ trabalho.nome }}</p>
+                    <p class="data">{{ trabalho.criacao }}</p>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <a href="">
+                <img src="{% static 'svg/hamburger.svg' %}">
+                </a>
+            </div>
+                
+        </div>
 
         {% empty %}
 
@@ -126,7 +178,25 @@
 
         {% for prova in provas reversed %}
 
-            <h1>{{ prova.nome }}</h1>
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ prova.nome }}</p>
+                    <p class="data">{{ prova.criacao }}</p>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <a href="">
+                <img src="{% static 'svg/hamburger.svg' %}">
+                </a>
+            </div>
+                
+        </div>
 
         {% empty %}
 
