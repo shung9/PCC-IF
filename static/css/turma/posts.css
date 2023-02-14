@@ -70,7 +70,6 @@ hr{
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
-    justify-content: center;
     align-items: center;
 }
 
@@ -91,7 +90,31 @@ hr{
     border-radius: 30px;
 }
 
-form{
-    margin: 0;
-}
+.comment-input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+  }
+
+  form{
+    width: 100%;
+  }
+
 

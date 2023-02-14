@@ -4,6 +4,7 @@ from home.views import nameUser
 from .models import Turma, Post, Comentarios
 from .forms import CriarTurma, criarPost
 import random, string
+from django.urls import reverse
 
 
 
@@ -112,18 +113,25 @@ def listarPost(request, codigo, id):
     cc = nameUser(request)
 
     listaPost = Post.objects.get(id=id)
+    url = reverse('turmas:post', args=[codigo, id])
+        
 
     if request.method == 'POST':
         coment = request.POST.get('coment')
 
-        novoComentario = Comentarios(post = listaPost, comentario = coment, dono = request.user)
-        novoComentario.save()
+
+        if coment:
+            novoComentario = Comentarios(post = listaPost, comentario = coment, dono = request.user)
+            novoComentario.save()
+            return redirect('turmas:post', codigo=codigo, id=id)
 
 
     context = {'nameUser': cc, 
                 'post': listaPost,
-                'comentarios': Comentarios.objects.filter(post = listaPost)}
+                'comentarios': Comentarios.objects.filter(post = listaPost),
+                'url': url
+                }
+                
 
-    
     return render(request, 'turmas/post.html', context)
 
