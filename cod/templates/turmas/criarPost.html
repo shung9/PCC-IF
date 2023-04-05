@@ -1,0 +1,76 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+<br>
+
+<div class="conta">
+    <p>Criando uma publicação em:</p> 
+        <div class="perfil">{{turma.nome|slice:":2"|upper}}</div>
+
+        <div class="dadosUser">
+            <p>{{turma.nome}}</p>
+            <p>{{turma.descricao}}</p>  
+        </div>
+
+        <div class="mudarconta">
+            <a href="{% url 'home' %}" class="btn btn-dark">Mudar de Turma</a>
+        </div>
+</div>
+
+<br>
+
+<div class="conta">
+    <form method='POST'>
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="nomeTurma">Nome</label>
+            <input type="text" class="form-control" id="id_nome" name="nome" placeholder="Digite o nome do {{tipo}}" maxlength="50">
+          </div>
+
+          <br><br>
+
+          <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" id="descricao" name="id_descricao" rows="5" maxlength="250" placeholder="Descrição de no máximo 250"></textarea>
+          </div>
+
+          <br><br>
+
+          <div class="form-group">
+            <label for="data">Data:</label>
+            <input type="date" class="form-control" id="id_dataEntrega" name="dataEntrega">
+          </div>
+
+          <br><br>
+
+          <div class="form-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="anexo" id="id_anexo" multiple>
+            <label class="custom-file-label" for="customFile">Navegar</label>
+          </div>
+        </div>
+
+          <br><br>
+
+
+        <center>
+
+          <button type="submit" class="btn btn-info">Criar</button>
+          <a class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
+        
+        </center>
+
+    </form>
+
+</div>
+
+
+
+
+
+{% endblock %}

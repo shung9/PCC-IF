@@ -1,0 +1,65 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+
+<br>
+
+<div class="conta">
+        <p>Você está logado com:</p> 
+            <div class="perfil">{{nameUser.name}}</div>
+
+            <div class="dadosUser">
+                <p>{{user.username}}</p>
+                <p>{{user.email}}</p>  
+            </div>
+
+            <div class="mudarconta">
+                <a href="{% url 'accounts:logout' %}" class="btn btn-dark">Mudar de Conta</a>
+            </div>
+</div>
+
+    <br>
+
+<div class="conta">
+    <h2>Criar turma:</h2><br>
+    <p>Preencha os campos abaixo para criar uma turma</p>
+    <br><br>
+
+
+    <form action="{% url 'turmas:criar' %}" method="POST">
+        {% csrf_token %}
+
+            <br>
+
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" class="form-control" name="nome" maxlength="50" required id="id_nome" placeholder="Nome da turma">
+                <small>Campo obrigatório</small>
+              </div>
+
+              <br><br>
+
+              <div class="form-group">
+                <label>Descrição</label>
+                <input type="text" class="form-control" name="descricao" maxlength="50" id="id_descricao" placeholder="Descrição da turma">
+              </div>
+             
+
+            <br>
+        
+            <center>
+                <button type="submit" class="btn btn-info" onclick="validarInput()">Criar</button>
+                <a class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
+            </center>
+ </form>
+   
+
+</div>
+
+{% endblock %}
+
+    

@@ -1,0 +1,68 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+
+<br>
+
+<div class="conta">
+        <p>Você está logado com:</p> 
+            <div class="perfil">{{nameUser.name}}</div>
+
+            <div class="dadosUser">
+                <p>{{user.username}}</p>
+                <p>{{user.email}}</p>  
+            </div>
+
+            <div class="mudarconta">
+                <a href="{% url 'accounts:logout' %}" class="btn btn-dark">Mudar de Conta</a>
+            </div>
+</div>
+
+    <br>
+
+<div class="conta">
+    <h2>Código da turma:</h2><br>
+    <p>Digite o código da turma para fazer parte dela</p>
+    <br><br>
+
+    <form action="{% url 'turmas:participar' %}" method="POST">
+        {% csrf_token %}
+
+        {% include 'parciais/_alerts.html' %}
+
+            <input type="text" name="busca" class="form-control" placeholder="código da turma" style="text-transform: uppercase;">
+            <br><br>
+            <center>
+                <button type="submit" class="btn btn-info">Participar</button>
+                <a  class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
+
+            </center>
+
+    </form>
+
+</div>
+
+<div class="lista">
+    <center>
+        <h4>Para fazer login com o código da turma:</h4>
+    </center>
+
+        <ul>
+        <li>Use um código de turma existente.</li>
+        <li>Possui 5 letras ou números.</li>
+        <li>Não tem espaços ou símbolos.</li>
+  </ul>
+</div>
+
+
+  
+
+
+
+
+
+{% endblock %}

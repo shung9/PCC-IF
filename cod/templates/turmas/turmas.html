@@ -1,0 +1,229 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+
+
+<title>Turma {{turma.nome}}</title>
+
+
+{% block links %}
+
+<style>
+.mural{display: none;}
+</style>
+
+<div class="content">
+
+        {% if request.user == turma.adm %}
+
+    <div class="dropdowns">
+        <div class="conteinerCodigo">
+            <div class="cdgTurma">
+                <p>Código da Turma:</p>
+                <span id="textcopy">{{ turma.codigo }}</span>
+            </div>
+
+            <button class="createAviso copiar" id="copiar">
+                <img src="{% static 'svg/copy.svg' %}">
+                <div id="copiando">
+                    Copiar
+                </div>
+                
+            </button>
+        </div>
+
+            <div class="dropdown">
+                <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{% static 'svg/create.svg' %}">
+                        Criar
+                </button>
+                
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item aviso" href="{% url 'turmas:criarPost' turma.codigo 'aviso' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
+                    <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'atividade' %}"><img src="{% static 'svg/activity.svg' %}"> atividade</a>
+                    <a class="dropdown-item trabalho" href="{% url 'turmas:criarPost' turma.codigo 'trabalho' %}"><img src="{% static 'svg/work.svg' %}">Trabalho</a>
+                    <a class="dropdown-item" href="{% url 'turmas:criarPost' turma.codigo 'prova' %}"><img src="{% static 'svg/proof.svg' %}">Prova</a>
+                </div>
+            </div>
+
+            <div class="dropdown editar">
+                <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{% static 'svg/gear.svg' %}">
+                        Editar
+                </button>
+                    
+                <div class="dropdown-menu aditarTurmaBotão" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item aditarTurma" href="{% url 'turmas:criarPost' turma.codigo 'aviso' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
+                    </div>
+                </div>
+    </div>
+
+
+    {% endif %}
+
+
+
+
+<div id="avisos" class="mural">
+    <div id="mural">
+
+
+
+        {% for aviso in avisos reversed %}
+        <a href="{% url 'turmas:post' turma.codigo aviso.id %}">
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ aviso.nome }}</p>
+                    <p class="data">{{ aviso.criacao }}</p>
+                </div>
+            </div>
+        </a>
+
+            <div class="hamburger">
+                {% if request.user == turma.adm %}
+                <img src="{% static 'svg/hamburger.svg' %}">
+
+                <form action="{% url 'turmas:excluirPost' aviso.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit">
+                </form>
+            {% endif %}
+            </div>
+                
+        </div>
+
+        {% empty %}
+
+            <h1>Não existe nenhum aviso</h1>
+
+        {% endfor %}
+
+    </div> 
+</div>
+    
+
+
+<div id="atividades" class="mural">
+    <div id="mural">
+       
+        {% for atividade in atividades %}
+        <a href="{% url 'turmas:post' turma.codigo atividade.id %}">
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ atividade.nome }}</p>
+                    <p class="data">{{ atividade.criacao }}</p>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <img src="{% static 'svg/hamburger.svg' %}">
+            </div>
+                
+        </div>
+        </a>
+        {% empty %}
+
+            <h1>Não existe nenhum atividade</h1>
+
+        {% endfor %}
+        
+
+    </div>
+</div>
+
+    
+
+
+<div id="trabalhos" class="mural">
+    <div id="mural">
+
+        {% for trabalho in trabalhos reversed %}
+        <a href="{% url 'turmas:post' turma.codigo trabalho.id %}">
+
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ trabalho.nome }}</p>
+                    <p class="data">{{ trabalho.criacao }}</p>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <a href="">
+                <img src="{% static 'svg/hamburger.svg' %}">
+                </a>
+            </div>
+                
+        </div>
+        </a>
+
+        {% empty %}
+
+            <h1>Não existe nenhum trabalho</h1>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+    
+<div id="provas" class="mural">
+    <div id="mural">
+
+        {% for prova in provas reversed %}
+
+        <div class="cardInformacoes">
+            <div class="info">
+                <div class="activity">
+                    <img src="{% static 'svg/activity.svg' %}">
+                </div>
+    
+                <div class="text">
+                    <p class="nome">{{ prova.nome }}</p>
+                    <p class="data">{{ prova.criacao }}</p>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <a href="">
+                <img src="{% static 'svg/hamburger.svg' %}">
+                </a>
+            </div>
+                
+        </div>
+
+        {% empty %}
+
+            <h1>Não existe nenhum prova</h1>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+<div id="aulas" class="mural">
+    <div id="mural">
+        <h1>aulas</h1>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<script src="{% static 'javascript/turmas/file.js' %}"></script>
+{% endblock %}
