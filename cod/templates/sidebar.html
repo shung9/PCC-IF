@@ -26,7 +26,7 @@
 
 <header>
   <div class="logo">
-    <a href="{% url 'home' %}" style="font-size: 30px;">Logo</a>
+    <a id="logoturma" href="{% url 'home' %}" style="font-size: 30px;"><img style="height: 75px;" src="{% static 'imgs/turmas/logo.png' %}" alt="" srcset=""></a>
 
   </div>
   
@@ -60,27 +60,22 @@
             <a class="dropdown-item" class="trigger" href="{% url 'turmas:participar' %}">Participar de uma turma</a>
         </div>
     </div>
-
     <div class="dropleft">
       <div class="perfil" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{nameUser.name}}
       </div>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div class="infosUser">
-                <center>
-                {{user.username}}
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="infosUser">
+               <img src="{% static 'imgs/turmas/user.png' %}" alt="" srcset="">{{user.username}} 
                 <br><br>
-                {{user.email}}
-                  <br>
-                <a href="accounts/registrar">Criar conta</a>
-                <a href="accounts/logout">LOgout</a>
-              </center>
-              </div>
+                <img src="{% static 'imgs/turmas/email.png' %}" alt="" srcset="">{{user.email}}
+                  <br> 
+                <a href="accounts/registrar"><img src="{% static 'imgs/turmas/criar.png' %}" alt="" srcset="">Criar conta</a><br>
+                <img src="{% static 'imgs/turmas/sair.png' %}"  alt=""><a href="accounts/logout">Logout</a>
               
+              </div>
             </div>
     </div>
-
   </div>
 
   {% else %}
