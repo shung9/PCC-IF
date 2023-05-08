@@ -236,6 +236,7 @@ button {
     let clicked = null
     let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : []
     
+    console.log(events)
     
     // variavel do modal:
     const newEvent = document.getElementById('newEventModal')
@@ -256,7 +257,7 @@ button {
       if (eventDay){
        document.getElementById('eventText').innerText = eventDay.title
        deleteEventModal.style.display = 'block'
-    
+
     
       } else{
         newEvent.style.display = 'block'

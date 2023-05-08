@@ -71,7 +71,7 @@
                 <img src="{% static 'imgs/turmas/email.png' %}" alt="" srcset="">{{user.email}}
                   <br> 
                 <a href="accounts/registrar"><img src="{% static 'imgs/turmas/criar.png' %}" alt="" srcset="">Criar conta</a><br>
-                <img src="{% static 'imgs/turmas/sair.png' %}"  alt=""><a href="accounts/logout">Logout</a>
+                <img src="{% static 'imgs/turmas/sair.png' %}"  alt=""><a href="{% url 'accounts:logout' %}">Logout</a>
               
               </div>
             </div>
