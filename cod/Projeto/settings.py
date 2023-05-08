@@ -1,7 +1,8 @@
 from pathlib import Path
-import os, sys
+import os
+import sys
 from django.contrib.messages import constants
-from decouple import config 
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +34,7 @@ INSTALLED_APPS = [
     'home',
     'turmas',
     'calendario',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -118,6 +119,8 @@ STATICFILES_DIRS = [
     'static/',
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+MEDIA_URL = "/uploads/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -130,9 +133,9 @@ sys.path.insert(1, os.path.join(PROJECT_ROOT, '../apps'))
 
 
 MESSAGE_TAGS = {
-    constants.ERROR: 'alert-error', 
+    constants.ERROR: 'alert-error',
     constants.SUCCESS: 'alert-success'
-    
+
 }
 
 # Configurações de envio de e-mail
@@ -140,9 +143,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER') 
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') 
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL') 
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 
 # Configurações do Celery
@@ -152,4 +155,3 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'America/Sao_Paulo'
-
