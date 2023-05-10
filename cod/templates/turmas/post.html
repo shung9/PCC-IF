@@ -99,9 +99,9 @@
 
             </div>
 
-           <div class="anexo">
+    <div class="anexo">
     {% if post.anexo %}
-        <span class="nome"> <a href="{{ post.anexo.url }}">Ver Anexo</a></span>
+        <span class="nome"> <a href="{{ post.anexo.url }}" target="_blank">Ver Anexo</a></span>
     {% else %}
         <span class="nome">Nenhum anexo associado.</span>
     {% endif %}
