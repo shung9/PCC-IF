@@ -12,4 +12,4 @@ urlpatterns = [
     path('<str:codigo>', views.turmas, name='turmas'),
     path('<str:codigo>/<str:tipo>/novopost', views.novoPost, name="criarPost"),
     path('<str:codigo>/<int:id>', views.listarPost, name='post'),
-]
+    path('post/<int:post_id>/excluir-anexo/', views.excluirAnexo, name='excluirAnexo'),]

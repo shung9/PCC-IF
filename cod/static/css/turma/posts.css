@@ -13,14 +13,50 @@
 
 
 .anexo{
-    border: 1px solid red;
+    border: 1px solid blue;
     height: 100%;
     width: 250px;
 
     display: flex;
 
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    
+    border-radius: 5px;
 }
+
+.nomeAnex {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.excluir-anexo-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.excluir-anexo-button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.excluir-anexo-button:hover {
+    background-color: #cc0000;
+}
+
 
 .entrega{
     width: 300px;
@@ -78,6 +114,7 @@ hr{
 
 
 .coment{
+    border-bottom: 1px solid white;
     color: #bab5b5;
     margin: 0;
 }

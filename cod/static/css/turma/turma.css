@@ -156,3 +156,34 @@
     height: 3px;
 }
 
+.custom-input {
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    background: #be1a1a;
+    transition: all 0.3s ease-in-out;
+    border: ridge;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3); 
+  }
+  
+  .custom-input:hover {
+    background: #8c1919; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  }
+  
+  .custom-input:focus {
+    outline: none;
+  }
+  
+  .custom-input:active {
+    background: #6c1313; 
+  }
+  
+  .custom-input.active {
+    background: #8c1919; /* Cor de fundo para a aba ativa */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para o efeito de escurecimento */
+  }
+  

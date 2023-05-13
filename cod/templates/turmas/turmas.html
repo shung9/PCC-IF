@@ -70,32 +70,27 @@
 
 
         {% for aviso in avisos reversed %}
-        <a href="{% url 'turmas:post' turma.codigo aviso.id %}">
+<a href="{% url 'turmas:post' turma.codigo aviso.id %}">
         <div class="cardInformacoes">
-            <div class="info">
-                <div class="activity">
-                    <img src="{% static 'svg/activity.svg' %}">
-                </div>
-    
-                <div class="text">
-                    <p class="nome">{{ aviso.nome }}</p>
-                    <p class="data">{{ aviso.criacao }}</p>
-                </div>
+        <div class="info">
+            <div class="activity">
+                <img src="{% static 'svg/activity.svg' %}">
             </div>
-        </a>
-
-            <div class="hamburger">
-                {% if request.user == turma.adm %}
-                <img src="{% static 'svg/hamburger.svg' %}">
-
-                <form action="{% url 'turmas:excluirPost' aviso.id %}" method="post">
-                    {% csrf_token %}
-                    <input type="submit">
-                </form>
-            {% endif %}
+            <div class="text">
+                <p class="nome">{{ aviso.nome }}</p>
+                <p class="data">{{ aviso.criacao }}</p>
             </div>
-                
         </div>
+        <div class="hamburger">
+            {% if request.user == turma.adm %}
+            <form action="{% url 'turmas:excluirPost' aviso.id %}" method="post">
+                {% csrf_token %}
+                <input class="custom-input" type="submit"  value="Apagar">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</a>
 
         {% empty %}
 
@@ -126,7 +121,13 @@
             </div>
 
             <div class="hamburger">
-                <img src="{% static 'svg/hamburger.svg' %}">
+                {% if request.user == turma.adm %}
+            
+            <form action="{% url 'turmas:excluirPost' atividade.id %}" method="post">
+                {% csrf_token %}
+                <input class="custom-input" type="submit"  value="Apagar">
+            </form>
+            {% endif %}
             </div>
                 
         </div>
@@ -146,29 +147,32 @@
 
 <div id="trabalhos" class="mural">
     <div id="mural">
-
         {% for trabalho in trabalhos reversed %}
         <a href="{% url 'turmas:post' turma.codigo trabalho.id %}">
+            <div class="cardInformacoes">
+                <div class="info">
+                    <div class="activity">
+                        <img src="{% static 'svg/activity.svg' %}">
+                    </div>
 
-        <div class="cardInformacoes">
-            <div class="info">
-                <div class="activity">
-                    <img src="{% static 'svg/activity.svg' %}">
+                    <div class="text">
+                        <p class="nome">{{ trabalho.nome }}</p>
+                        <p class="data">{{ trabalho.criacao }}</p>
+                    </div>
                 </div>
-    
-                <div class="text">
-                    <p class="nome">{{ trabalho.nome }}</p>
-                    <p class="data">{{ trabalho.criacao }}</p>
+
+                <div class="hamburger">
+                    
+                    {% if request.user == turma.adm %}
+                    
+                    <form action="{% url 'turmas:excluirPost' trabalho.id %}" method="post">
+                        {% csrf_token %}
+                        <input class="custom-input" type="submit"  value="Apagar">
+                    </form>
+                    {% endif %}
+                    
                 </div>
             </div>
-
-            <div class="hamburger">
-                <a href="">
-                <img src="{% static 'svg/hamburger.svg' %}">
-                </a>
-            </div>
-                
-        </div>
         </a>
 
         {% empty %}
@@ -176,7 +180,6 @@
             <h1>Não existe nenhum trabalho</h1>
 
         {% endfor %}
-
     </div>
 </div>
 
@@ -185,7 +188,7 @@
     <div id="mural">
 
         {% for prova in provas reversed %}
-
+        <a href="{% url 'turmas:post' turma.codigo prova.id %}">
         <div class="cardInformacoes">
             <div class="info">
                 <div class="activity">
@@ -199,13 +202,19 @@
             </div>
 
             <div class="hamburger">
-                <a href="">
-                <img src="{% static 'svg/hamburger.svg' %}">
-                </a>
+                
+            {% if request.user == turma.adm %}
+            
+            <form action="{% url 'turmas:excluirPost' prova.id %}" method="post">
+                {% csrf_token %}
+                <input class="custom-input" type="submit"  value="Apagar">
+            </form>
+            {% endif %}
+                
             </div>
                 
         </div>
-
+        </a>
         {% empty %}
 
             <h1>Não existe nenhum prova</h1>
