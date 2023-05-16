@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, EmailMessage
 from email.utils import make_msgid
@@ -11,7 +11,11 @@ import threading
 from django.urls import reverse
 from .tasks import enviar_email
 from django.contrib import messages
-
+import os
+from django.core.exceptions import PermissionDenied
+from django.http import HttpResponseRedirect
+from django.conf import settings
+from django.views.decorators.http import require_POST
 
 @login_required()
 def turmas(request, codigo):
@@ -106,6 +110,7 @@ def novoPost(request, codigo, tipo):
             obj = formPost.save(commit=False)
             obj.turmaPertecente = turma
             obj.tipo = tipo
+            obj.anexo = request.FILES.get('anexo', None)
             obj.save()
             obj.anexo = request.FILES['anexo']
             
@@ -115,15 +120,19 @@ def novoPost(request, codigo, tipo):
             participantes = turma.participantes.all()
             remetentes = [participante.email for participante in participantes]
 
+            # if tipo in ['prova', 'atividade']:
+            #    send_mail('Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
+            # else:
+            #    send_mail('Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
 
-            #if tipo in ['prova', 'atividade']:
-            #    send_mail(
-            #        'Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
-            #else:
-            #    send_mail(
-            #        'Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
+           # if tipo in ['prova', 'atividade']:
+            # send_mail(
+            #   'Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
+            # else:
+            # send_mail(
+            #  'Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
 
-            return redirect('turmas:turmas', codigo=codigo)
+            # return redirect('turmas:turmas', codigo=codigo)
 
         else:
             formPost = criarPost()
@@ -148,7 +157,7 @@ def listarPost(request, codigo, id):
 
         if coment:
             novoComentario = Comentarios(
-                post=listaPost, comentario=coment, dono=request.user)
+            post=listaPost, comentario=coment, dono=request.user)
             novoComentario.save()
             return redirect('turmas:post', codigo=codigo, id=id)
 
@@ -171,3 +180,26 @@ def excluirPost(request, post_id):
     post = Post.objects.get(id=post_id)
     post.delete()
     return redirect(request.META.get('HTTP_REFERER', '/'))
+
+@login_required
+def excluirAnexo(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    
+    if not (request.user):
+        raise PermissionDenied  
+    if post.anexo:
+        caminho_arquivo = os.path.join(settings.MEDIA_ROOT, str(post.anexo))
+        
+       
+        if os.path.exists(caminho_arquivo):
+            # Exclui o arquivo
+            os.remove(caminho_arquivo)
+            post.anexo = None
+            post.save()
+
+    
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+
+
+

@@ -12,10 +12,17 @@
         <div class="infoPost">
     
             <div class="text">
-                <p class="nome">{{ post.nome }}</p>
-                <p class="data">{{ post.criacao }}</p>
+                <h5 class="nome">{{ post.nome }}</h5><br>
+                <h5 class="data">{{ post.criacao }}</h5>
 
                 {% if post.tipo == 'atividade' %}
+                <p class="valor">Valor: {{ post.valor }}</p>
+                <div class="entrega">
+                    <p class="dataEntrega">Entrega: {{ post.dataEntrega }}</p>
+                </div>
+                {% endif %}
+
+                {% if post.tipo == 'trabalho' %}
                 <p class="valor">Valor: {{ post.valor }}</p>
                 <div class="entrega">
                     <p class="dataEntrega">Entrega: {{ post.dataEntrega }}</p>
@@ -69,8 +76,8 @@
 
 
                                     <div class="pp">
-                                        <p class="valor">{{ comentario.dono }}</p>
-                                        <p class="coment">{{ comentario.comentario }}</p>
+                                        <h5 class="valor">{{ comentario.dono|upper }}</h5>
+                                        <p class="coment"><strong> {{ comentario.comentario }} </strong></p>
                                     </div>
 
                                     
@@ -99,13 +106,26 @@
 
             </div>
 
-           <div class="anexo">
-    {% if post.anexo %}
-        <span class="nome"> <a href="{{ post.anexo.url }}" target="_blank">Ver Anexo</a></span>
-    {% else %}
-        <span class="nome">Nenhum anexo associado.</span>
-    {% endif %}
-</div>
+            <div class="anexo">
+                {% if post.anexo %}
+                    <span class="nomeAnex"><a href="{{ post.anexo.url }}" target="_blank">Ver Anexo</a></span>
+                    
+                    {% if user == post.dono or user.is_staff %}
+                    <form class="excluir-anexo-form" action="{% url 'turmas:excluirAnexo' post_id=post.id %}" method="post">
+                        {% csrf_token %}
+                        <br><br>
+                        <button class="excluir-anexo-button" type="submit">Excluir Anexo</button>
+                    </form>
+                    {% endif %}
+                    
+                {% else %}
+                    <span class="nome">Nenhum anexo associado</span>
+                {% endif %}
+            </div>
+            
+            
+            
+            
 
 
     </div>

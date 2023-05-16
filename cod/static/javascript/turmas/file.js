@@ -14,7 +14,6 @@ function block(id) {
 function tabs(id, clicado) {
     var elements = [av, att, tr, pr, au];
     var title = document.getElementById(clicado.id);
-
     elements.forEach(elem => {
         if (elem.id !== id) {
             elem.style.display = 'none';

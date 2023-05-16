@@ -88,4 +88,27 @@
     color: #f24747;
     
   }
-  
+  .custom-file-input {
+    display: none;
+}
+
+.custom-file-label {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #337ab7;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.custom-file-label:hover {
+    background-color: #23527c;
+}
+
+#file-name {
+    display: inline-block;
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+}
+
