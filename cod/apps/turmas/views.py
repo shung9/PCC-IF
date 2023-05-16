@@ -107,23 +107,21 @@ def novoPost(request, codigo, tipo):
             obj.turmaPertecente = turma
             obj.tipo = tipo
             obj.save()
+            obj.anexo = request.FILES['anexo']
+            
+                
+
 
             participantes = turma.participantes.all()
             remetentes = [participante.email for participante in participantes]
 
-<<<<<<< HEAD
+
             #if tipo in ['prova', 'atividade']:
-            #    send_mail('Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
+            #    send_mail(
+            #        'Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
             #else:
-            #    send_mail('Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
-=======
-            if tipo in ['prova', 'atividade']:
-                send_mail(
-                    'Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
-            else:
-                send_mail(
-                    'Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
->>>>>>> a6a2bcfdcdc7bb637ec3414f917eb17b09bff855
+            #    send_mail(
+            #        'Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
 
             return redirect('turmas:turmas', codigo=codigo)
 
