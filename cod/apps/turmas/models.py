@@ -23,10 +23,8 @@ class Post(models.Model):
     descricao = models.TextField(max_length=250, null=True, blank=True)
     valor = models.CharField(max_length=10, null=True, blank=True)
     dataEntrega = models.DateField(null=True, blank=True)
-    anexo = models.FileField(
-        upload_to='pdf/', null=True, blank=True, default=None)
-    turmaPertecente = models.ForeignKey(
-        Turma, on_delete=models.CASCADE, null=True)
+    anexo = models.FileField(upload_to='pdf/', null=True, blank=True, default=None)
+    turmaPertecente = models.ForeignKey(Turma, on_delete=models.CASCADE, null=True)
     criacao = models.DateTimeField(auto_now=True)
 
     def __str__(self):

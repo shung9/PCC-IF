@@ -11,8 +11,8 @@ urlpatterns = [
     path('', include('home.urls')),
     path('turmas/', include('turmas.urls')),
     path('calendario/', include('calendario.urls')),
+    path('calendar/', CalendarView.as_view(), name='calendar')
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
