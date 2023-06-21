@@ -112,6 +112,10 @@ def novoPost(request, codigo, tipo):
             obj.tipo = tipo
             obj.anexo = request.FILES.get('anexo', None)
             obj.save()
+            obj.anexo = request.FILES['anexo']
+            
+                
+
 
             participantes = turma.participantes.all()
             remetentes = [participante.email for participante in participantes]
