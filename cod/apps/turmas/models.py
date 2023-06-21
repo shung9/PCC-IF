@@ -37,3 +37,4 @@ class Comentarios(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     comentario = models.TextField(max_length=240, null=True, blank=True)
     dono = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+

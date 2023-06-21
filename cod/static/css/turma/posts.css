@@ -1,3 +1,17 @@
+/*Variaveis*/
+body{
+    --primary-100:#1E2022;
+    --primary-200:#34373b;
+    --primary-300:#F0F5F9;
+    --accent-100:#788189;
+    --accent-200:#e1e4e6;
+    --text-100:#1E2022;
+    --text-200:#52616B;
+    --bg-100:#F0F5F9;
+    --bg-200:#C9D6DF;
+    --bg-300:#bfc7d1;
+    }
+
 .informacoes{
     width: 100%;
     
@@ -13,7 +27,7 @@
 
 
 .anexo{
-    border: 1px solid blue;
+    border: 1px solid var(--primary-200);
     height: 100%;
     width: 250px;
 
@@ -44,7 +58,7 @@
 }
 
 .excluir-anexo-button {
-    background-color: #ff0000;
+    background-color: #dc3545;
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -54,7 +68,7 @@
 }
 
 .excluir-anexo-button:hover {
-    background-color: #cc0000;
+    background-color: #ce1717;
 }
 
 
@@ -64,8 +78,8 @@
     margin-top: 10px;
 
     border-radius: 10px;
-    background-color: var(--background-sidebar);
-    border: 1px solid red;
+    background-color: var(--text-200);
+    border: 1px solid var(--primary-100);
 
     display: flex;
     justify-content: center;
@@ -78,8 +92,8 @@ hr{
 }
 
 .descricao{
-    border-top: 1px solid var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
+    border-top: 1px solid var(--primary-100);
+    border-bottom: 1px solid var(--primary-100);
     width: 600px;
     margin-top: 20px;
     padding-top: 20px;
@@ -87,8 +101,16 @@ hr{
     
 }
 
+.nomeTurma{
+    color: var(--primary-100);
+}
+
+.valor{
+    color: var(--primary-200);
+}
+
 .textDescricao{
-    color: #fff;
+    color: var(--primary-200);
 }
 
 .comentarios{
@@ -114,8 +136,8 @@ hr{
 
 
 .coment{
-    border-bottom: 1px solid white;
-    color: #bab5b5;
+    border-bottom: 1px solid var(--primary-100);
+    color: var(--text-200);
     margin: 0;
 }
 
@@ -179,3 +201,10 @@ hr{
     position: absolute;
 }
 
+.infoAnex{
+    color: var(--primary-100);
+}
+
+.nomeC{
+    color: #1E2022;
+}

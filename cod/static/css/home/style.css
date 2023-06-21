@@ -72,10 +72,9 @@
   height: 130px;
   width: 400px;
 
-  background-color: #6300de;
+  background-color: var(--primary-100);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   border-bottom-width: 0px;
-  
   padding: 0 5px 0 10px;
   display: flex;
   align-items: center;
@@ -86,7 +85,7 @@
   width: 100px;
   border-radius: 50%;
 
-  background-color: var(--primary-color);
+  background-color: var(--bg-100);
 
   align-items: center;
   justify-content: center;
@@ -103,13 +102,13 @@
 
 .circle .circleNome{
   font-size: 30px;
-  color: #fff;
+  color: black;
   font-weight: bold;
 }
 
 .cardTurmas .cardNome{
   margin-left: 10px;
-  color: #000000;
+  color: #F0F5F9;
   font-weight: bold;
 
 }
@@ -121,7 +120,7 @@
   border: none;
   margin-top: 10px;
   margin-bottom: 10px;
-  background: #7d2ae8;
+  background: #52616B;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -134,7 +133,8 @@
  }
 
  .cardTurmas button:hover {
-  background: #24232b;
+  background: #ffffff;
+  color: black;
  }
 
  .card a{

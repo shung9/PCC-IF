@@ -17,9 +17,9 @@
         </div>
 
         <div class="mudarconta">
-            <a href="{% url 'home' %}" class="btn btn-dark">Mudar de Turma</a>
+            <a id="redirect" href="{% url 'home' %}" class="btn btn-dark">Mudar de Turma</a>
         </div>
-</div>
+      </div>
 
 <br>
 
@@ -68,8 +68,8 @@
 
         <center>
 
-          <button type="submit" class="btn btn-info">Criar</button>
-          <a class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
+          <button id="create" type="submit" class="btn btn-info">Criar</button>
+          <a id="cancel" class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
         
         </center>
 

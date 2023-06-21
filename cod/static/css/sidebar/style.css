@@ -11,12 +11,23 @@ body
 
   /* variáveis */
   /* cores */
-  --background-body: #121214;
-  --background-sidebar: #202024;
+  --background-body: #F0F5F9;
+  --background-sidebar: #bfc7d1;
   --primary-color: #1A73E8;
   --hover-color: #3405a3;
   --secondary-color: #fff;
   --hover: #00ffff;
+
+  --primary-100:#1E2022;
+  --primary-200:#34373b;
+  --primary-300:#F0F5F9;
+  --accent-100:#788189;
+  --accent-200:#e1e4e6;
+  --text-100:#1E2022;
+  --text-200:#52616B;
+  --bg-100:#F0F5F9;
+  --bg-200:#C9D6DF;
+  --bg-300:#bfc7d1;
 
   /* m  dadas */
   --arrow-width: 10px;
@@ -27,11 +38,17 @@ body
 
 p{color: #f0f8ff;}
 
-a{text-decoration: none;}
+a { text-decoration: none; 
+    color: var(--primary-100);
+}
+
+a:hover{
+  color: var(--primary-200);
+}
 
 
 h1, h2, h3, h4, h5{
-  color: var(--primary-color)
+  color: var(--primary-100)
 }
 
 
@@ -40,9 +57,9 @@ header {
     justify-content : space-between;
     align-items : center;
     padding: 30px 10%;
-    background-color: var(--background-sidebar);
+    background-color: var(--primary-100);
     height: 5em;
-    border-bottom: 0.5px solid var(--primary-color);
+    border-bottom: 0.5px solid var(--primary-300);
     }
 
 .active {
@@ -57,7 +74,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+    border-color: white;
   }
   
   .nav_link,.responsivo li{
@@ -65,10 +82,13 @@ header {
     display: inline-block;
     padding: 0px 20px;
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--bg-100);
     cursor: pointer;
   }
 
+  .nav_link:hover{
+    color: var(--secondary-color);
+  }
   
   .mural {
     display: none;
@@ -85,40 +105,40 @@ header {
     font-size: 2.3em;
     border-radius: 50%;
     border: 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary-100);
     color: #ffffff;
     text-align: center;
     cursor: pointer;
-    transition: 0.5s
+    transition: 0.5s;
+    border: 2px solid;
   }
   
   .add:hover{
-    background-color: var(--hover-color) !important;
-    color: #fff !important;
+    background-color: var(--primary-300) !important;
+    color: var(--primary-100) !important;
   }
   
   .dropdown-menu{
-    background-color: var(--background-sidebar);
-    border: #1A73E8 solid 1px;
+    background-color: var(--bg-100);
+    border: var(--primary-200) solid 1px;
   }
   
   .dropdown-item, .infosUser{
-    color: #1A73E8;
+    color: var(--text-100);
     font-weight: bold;
     font-family: 'Poppins', sans-serif; 
     transition: 0.5s;
   }
-  
+
   .dropdown-item:hover{
-    background-color: var(--background-sidebar);
-    color: var(--hover);
+    background-color: var(--bg-200);
   }
   
   .perfil{
-    background-color: var(--hover-color);
+    background-color: var(--primary-100);
     height: 45px;
     width: 45px;
-    border-radius: 50%;
+    border-radius: 50% ;
     text-align: center;
     color: #ffffff;
     font-size: 20px;
@@ -126,12 +146,13 @@ header {
     justify-content: center;
     display: flex;
     margin: 0%;
+    border: 2px solid;
   }
   
   .perfil:hover{
     cursor: pointer;
     border-radius: 50%;
-    border: #534bf3 2px solid;
+    border: var(--bg-300) 2px solid;
     transition: 0.3s;
   }
 

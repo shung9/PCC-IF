@@ -1,114 +1,167 @@
 
+/*Variaveis*/
+body{
+  --primary-100:#1E2022;
+  --primary-200:#34373b;
+  --primary-300:#F0F5F9;
+  --accent-100:#788189;
+  --accent-200:#e1e4e6;
+  --text-100:#1E2022;
+  --text-200:#52616B;
+  --bg-100:#F0F5F9;
+  --bg-200:#C9D6DF;
+  --bg-300:#bfc7d1;
+  }
+  
+.codName{
+  color: var(--primary-300);
+}
+
 .conta{
-    border: 1px solid var(--primary-color);
-    padding: 20px;
-    border-radius: 5px;
-    margin-left: 30%;
-    margin-right: 30%;
-    line-height: 0.5em;
+  border: 1px solid var(--primary-200);
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 30%;
+  margin-right: 30%;
+  line-height: 0.5em;
+  background-color: var(--primary-100);
+}
+
+.infoTurma{
+  color: var(--primary-300);
+}
+
+.conta button {
+  background-color: var(--accent-100);
+  color: var(--primary-300);
+  border: 0;
   }
   
-  .conta button{
-    background-color: #138496;
-    color: #F3F4F4;
-    border: 0;
+  #create:hover {
+  background-color: var(--bg-100);
   }
   
-  .dadosUser{  
-    margin-top: -38px;
-    padding-left: 55px;
-    position: relative;
-    line-height: 0.5em;
-    text-align: justify;
-  }
-  
-  .mudarconta{
-    display: flex;
-    float: right;
-    margin-top: -58px;
-    position: relative;
-  }
-  
-  .lista{
-    margin-top: 10px;
-    margin-left: 30%;
-    margin-right: 30%;
-  }
-  .lista li{
-    margin-left: 25%;
-    color: #F3F4F4;
-  }
-  
-  #color-input {
-    display: flex;
-    opacity: 0;
-  }
-  
-  #pseudo-color-input {
-    border: #fff solid 3px;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    cursor: pointer;
-    background-color: #534bf3;
-    margin-left: 70px;
-  
-  
-  }
-  
-  .corInput{
-    margin-left: 20px;
-    margin-top: 5px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    display: flex;
-    align-items : center;
-    text-align: center;
-  }
-  
-  .corInput .TtlH5{
-    margin-left: -30px;
+  #cancel:hover {
+  background-color: var(--bg-200);
+  color: var(--text-100);
   }
 
-  label{
-    color: #F3F4F4;
-    margin-bottom: 5px;
-    margin-left: 5px;
-  }
+p{
+  color: white;
+}
 
-  #message{
-    margin-bottom: 0;
-    color: #4c060d;
-  }
+.dadosUser{  
+  margin-top: -38px;
+  padding-left: 55px;
+  position: relative;
+  line-height: 0.5em;
+  text-align: justify;
+}
 
-  small{
-    display: none;
-    margin-top: 5px;
-    margin-left: 10px;
-    color: #f24747;
-    
-  }
-  .custom-file-input {
-    display: none;
+.perfil{
+  background-color: var(--primary-300);
+  color: var(--primary-100);
+}
+
+.mudarconta{
+  display: flex;
+  float: right;
+  margin-right: -15px;
+  margin-top: -90px;
+  position: relative;
+}
+
+.mudarconta a{
+  background-color: var(--bg-100);
+    color: var(--primary-100);
+}
+ #redirect:hover{
+  background-color: rgb(211, 24, 24);
+}
+#redirect{
+  transition: 0.3s;
+}
+
+.lista{
+  margin-top: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.lista li{
+  margin-left: 25%;
+  color: #F3F4F4;
+}
+
+#color-input {
+  display: flex;
+  opacity: 0;
+}
+
+#pseudo-color-input {
+  border: #fff solid 3px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #534bf3;
+  margin-left: 70px;
+
+
+}
+
+.corInput{
+  margin-left: 20px;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  align-items : center;
+  text-align: center;
+}
+
+.corInput .TtlH5{
+  margin-left: -30px;
+}
+
+label{
+  color: #F3F4F4;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+#message{
+  margin-bottom: 0;
+  color: #4c060d;
+}
+
+small{
+  display: none;
+  margin-top: 5px;
+  margin-left: 10px;
+  color: #f24747;
+  
+}
+.custom-file-input {
+  display: none;
 }
 
 .custom-file-label {
-    position: relative;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #337ab7;
-    color: #fff;
-    border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  background-color: var(--accent-100);
+  color: #fff;
+  border-radius: 5px;
 }
 
 .custom-file-label:hover {
-    background-color: #23527c;
+  background-color: var(--primary-300);
+  color: var(--primary-100);
 }
 
 #file-name {
-    display: inline-block;
-    margin-left: 10px;
-    color: white;
-    font-weight: bold;
+  display: inline-block;
+  margin-left: 10px;
+  color: white;
+  font-weight: bold;
 }
-

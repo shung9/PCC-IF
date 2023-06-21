@@ -33,7 +33,7 @@ def turmas(request, codigo):
         'trabalhos': posts.filter(tipo='trabalho'),
         'provas': posts.filter(tipo='prova'),
         'turma': turma,
-        'participantes': participantes
+        'participantes': participantes,
     }
 
     # enviar_email.delay(cc, cc)
@@ -193,9 +193,20 @@ def excluirAnexo(request, post_id):
             post.anexo = None
             post.save()
 
-    
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
+def calendario (request):
+    return render(request, 'turmas:rew.html')
 
+def listar_participantes(request, codigo):
+    turma = Turma.objects.get(codigo=codigo)
+    participantes = turmas.participantes.all()
+    print(participantes)
 
+    context = {
+        'turma': turma,
+        'participantes': participantes,
+    }
+
+    return render(request, 'turmas/turmas.html', context)

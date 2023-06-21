@@ -1,0 +1,325 @@
+por kxinhoeditar   removerCOMANDOS
+
+Flight Simulator X
+
+Lista completa dos comandos de tecla
+OBSERVAÇÃO: verifique se Num Lock está DESATIVADO antes de usar os
+comandos do teclado numérico.
+observação 2: estas indicações são do teclado configurado para
+ABNT2
+
+COMANDOS DO SIMULADOR
+
+
+Pausar P
+Modo de tela inteira ALT + ENTER
+Exibir menus
+(no modo de tela inteira) ALT
+Exibir/ocultar prancheta F10
+Ativar/desativar som Q
+Reiniciar vôo atual Ctrl + ç (cedilha)
+Salvar vôo ç (cedilha)
+Sair do Flight Simulator CTRL+C
+Sair do Flight Simulator imediatamente CTRL+BREAK
+Exibir/ocultar janela ATC ` (ACENTO)
+Ativar/desativar joystick CTRL+K
+Alternar coordenadas/taxa de quadros SHIFT+Z
+Selecionar item 1 1
+Selecionar item 2 2
+Selecionar item 3 3
+Selecionar item 4 4
+Selecionar compactação de tempo R
+Aumentar seleção = (SINAL DE IGUAL)
+Aumentar levemente a seleção SHIFT+= (SINAL DE IGUAL)
+Reduzir levemente a seleção SHIFT+- (SINAL DE MENOS)
+Reduzir seleção - (SINAL DE MENOS)
+
+
+
+COMANDOS DA SUPERFÍCIE DE CONTROLE
+
+
+Inclinação lateral à esquerda (ailerons) 4 do teclado numérico
+Inclinação lateral à direita (ailerons) 6 do teclado numérico
+Compensador do aileron para a esquerda CTRL+4 do teclado numérico
+Compensador do aileron para a direita CTRL+6 do teclado numérico
+Guinada à esquerda (leme) 0 do teclado numérico
+Guinada à direita (leme) ENTER do teclado numérico
+Compensador do leme para a esquerda CTRL+ 0 do teclado numérico
+Compensador do leme para a direita CTRL+ENTER do teclado numérico
+Centralizar ailerons e leme 5 do teclado numérico
+Inclinar para baixo (profundor) 8 do teclado numérico
+Inclinar para cima (profundor) 2 do teclado numérico
+Abaixar compensação do profundor 7 do teclado numérico
+Elevar compensação do profundor 1 do teclado numérico
+Recolher flaps (totalmente) F5
+Recolher flaps (em incrementos) F6
+Estender flaps (em incrementos) F7
+Estender flaps (totalmente) F8
+Estender/recolher freios aerodinâmicos/spoiler ; (ponto e vírgula)
+Armar freios aerodinâmicos automáticos, auto spoiler SHIFT+; (ponto e vírgula)
+Levantar/abaixar leme hidrodinâmico SHIFT+W
+
+
+
+COMANDOS DO MOTOR
+
+
+Em uma aeronave multimotor, os comandos de motor afetam todos os
+motores, a não ser que o primeiro selecione um motor pressionando E + o
+número do motor ( 1 - 4 ). Para voltar a controlar todos os motores,
+pressione E + todos os números de motor em uma rápida sucessão ( E , 1 ,
+2 e assim por diante).
+Partida automática CTRL+E
+Cortar aceleração F1
+Empuxo reverso (motores turbo-hélices/jatos) F2
+
+Reduzir aceleração F2 ou 3 do teclado numérico
+Aumentar aceleração F3 ou 9 do teclado numérico
+Aceleração máxima F4
+Ativar/desativar reaquecimento/pós-queimador SHIFT+F4
+Definir RPM da hélice como baixa CTRL+F1
+Reduzir RPM da hélice CTRL+F2
+Aumentar RPM da hélice CTRL+F3
+Definir RPM da hélice como alta CTRL+F4
+Definir mistura para desligamento em marcha lenta CTRL+SHIFT+F1
+Empobrecer mistura CTRL+SHIFT +F2
+Enriquecer mistura CTRL+SHIFT+F3
+Definir mistura como rica CTRL+SHIFT+F4
+Ativar/desativar aquecimento do carburador/degelador do motor H
+Selecionar motor E
+Selecionar magnetos M
+Selecionar partida do jato J
+
+                 ELICOPTERO
+
+Ativar/desativar embreagem do rotor do helicóptero SHIFT+. (PONTO)
+Ativar/desativar regulador do rotor do helicóptero SHIFT+, (VÍRGULA)
+Ativar/desativar freio do rotor do helicóptero SHIFT+B
+Aumentar seleção = (SINAL DE IGUAL)
+Aumentar levemente a seleção SHIFT+= (SINAL DE IGUAL)
+Reduzir levemente a seleção SHIFT+- (SINAL DE MENOS)
+Reduzir seleção - (SINAL DE MENOS)
+
+
+
+COMANDOS GERAIS DA AERONAVE
+
+
+Acionar/liberar freio de estacionamento CTRL+. (PONTO)
+Iniciar/parar pushback SHIFT+P (em seguida, pressione 1 ou 2
+para girar a cauda para direita/esquerda)
+Aplicar/liberar freios . (PONTO)
+Aplicar freios esquerdos F11
+Aplicar freios direitos F12
+Abaixar/recolher trem de pouso G
+Ativar/desativar trava da roda da cauda SHIFT+G
+Abaixar trem de pouso 'G' e manualmente com bomba
+(se o sistema apresentar falha)
+CTRL+G (mover a alça do trem de pouso para a posição Dn
+e pressionar
+o comando quando necessário)
+Ativar/desativar sistema de fumaça I
+Abrir cowl flaps (em incrementos) CTRL+SHIFT+V
+Fechar cowl flaps (em incrementos) CTRL+SHIFT+C
+Selecionar saída SHIFT+E (em seguida, pressione 1 ou 4
+para abrir/fechar)
+
+
+
+COMANDOS DE LUZ
+
+
+Ativar/desativar todas as luzes L
+Ativar/desativar luzes estroboscópicas O
+Ativar/desativar luzes do painel SHIFT+L
+Ativar/desativar luzes de pouso CTRL+L
+Luz de pouso inclinada para baixo CTRL+SHIFT+2 do teclado
+numérico
+Luz de pouso inclinada para a esquerda CTRL+SHIFT+4 do teclado
+numérico
+Luz de pouso inclinada para a direita CTRL+SHIFT+6 do teclado
+numérico
+Luz de pouso inclinada para cima CTRL+SHIFT+8 do teclado numérico
+Centralizar luz de pouso CTRL+SHIFT+5 do teclado numérico
+
+
+
+COMANDOS DE RÁDIO
+
+
+Exibir/ocultar janela ATC ` (crase)
+Ativar/desativar recuo do VOR 1 CTRL+1
+Ativar/desativar recuo do VOR 2 CTRL+2
+Ativar/desativar recuo do MKR CTRL+3
+Ativar/desativar recuo do DME CTRL+4
+Ativar/desativar recuo do ADF CTRL+5
+Alternar para freqüência em espera
+no rádio selecionado X
+Selecionar rádio COM C
+Selecionar rádio NAV N
+Selecionar indicador OBS V
+Selecionar ADF A
+Selecionar DME F
+Selecionar transponder T
+Aumentar seleção = (SINAL DE IGUAL)
+Aumentar levemente a seleção SHIFT+= (SINAL DE IGUAL)
+Reduzir levemente a seleção SHIFT+- (SINAL DE MENOS)
+Reduzir seleção - (SINAL DE MENOS)
+
+
+
+COMANDOS DO PILOTO AUTOMÁTICO
+
+
+Ativar/desativar controle mestre do piloto automático Z
+Ativar/desativar direcionador de vôo CTRL+F
+Ativar/desativar nivelador de asa do piloto automático CTRL+V
+Ativar/desativar amortecedor de guinada CTRL+D
+Ativar/desativar estabilização de altitude do piloto automático CTRL+ Z
+
+Selecionar altitude do piloto automático CTRL+SHIFT+Z
+Ativar/desativar estabilização de rumo do piloto automático CTRL+H
+Selecionar bug da proa CTRL+SHIFT+H
+Ativar/desativar manutenção da velocidade no ar CTRL+R
+Selecionar velocidade no ar do piloto automático CTRL+SHIFT+R
+Ativar/desativar estabilização de Mach CTRL+M
+Armar aceleração automática SHIFT+R
+Acionar aceleração automática
+Modo de decolagem/arremetida (TOGA) CTRL+SHIFT+G
+Ativar/desativar estabilização de Nav 1 do piloto automático CTRL+N
+Ativar/desativar modo de aproximação do piloto automático, aprouch CTRL+A
+Ativar/desativar modo de back course do piloto automático CTRL+B
+Ativar/desativar estabilizador do localizador do piloto automático
+CTRL+O
+Ativar/desativar estabilização de atitude do piloto automático CTRL+T
+Aumentar seleção = (SINAL DE IGUAL)
+Aumentar levemente a seleção SHIFT+= (SINAL DE IGUAL)
+Reduzir levemente a seleção SHIFT+- (SINAL DE MENOS)
+Reduzir seleção - (SINAL DE MENOS)
+
+
+
+COMANDOS DE INSTRUMENTO
+
+
+Redefinir indicador de rumo D
+Zerar altímetro B
+Ativar/desativar aquecimento do pitot SHIFT+H
+Selecionar ponteiro de referência EGT U
+Aumentar seleção = (SINAL DE IGUAL)
+Aumentar levemente a seleção SHIFT+= (SINAL DE IGUAL)
+Reduzir levemente a seleção SHIFT+- (SINAL DE MENOS)
+Reduzir seleção - (SINAL DE MENOS)
+
+
+
+COMANDOS DE VISUALIZAÇÃO
+
+
+Ativar/desativar painel W
+Voltar para visualização de painel SHIFT+0 do teclado numérico
+Alternar entre as visualizações (cabine, cabine virtual,
+torre, destacar avião) S
+Alternar visualizações para trás SHIFT+S
+Exibir/ocultar janelas do painel adicional
+(rádios, controles de motor, GPS e
+assim por diante.) SHIFT + 1 a 9
+Exibir/ocultar rótulos das aeronaves CTRL+SHIFT+L
+Criar nova janela de visualização (acento agudo)
+Criar nova janela de visualização de cima para baixo SHIFT+[ (abre couchete)
+Fechar janela de visualização [ (abre COLCHETE )
+Trazer janela para frente &lsquo; (APÓSTROFO)
+Aumentar zoom = (SINAL DE IGUAL)
+Diminuir zoom - (HÍFEN)
+Definir zoom para 1X BACKSPACE
+Ativar/desativar painéis de instrumentos SHIFT+ (acento agudo)
+Alternar para visualização de cima para baixo CTRL+S
+Alternar para próxima visualização CTRL+TAB
+Alternar para visualização anterior CTRL+SHIFT+TAB
+Selecionar direção da visualização Teclado numérico / (BARRA)
+Olhar à frente SHIFT+8 do teclado numérico
+Olhar à frente/à direita SHIFT+9 do teclado numérico
+Olhar à direita SHIFT+6 do teclado numérico
+Olhar para trás/para direita SHIFT+3 do teclado numérico
+Olhar para trás SHIFT+2 do teclado numérico
+Olhar para trás/para esquerda SHIFT+1 do teclado numérico
+Olhar à esquerda SHIFT+4 do teclado numérico
+Olhar à frente/à esquerda SHIFT+7 do teclado numérico
+Olhar para cima CTRL+5 do teclado numérico
+Olhar à frente/para cima CTRL+8 do teclado numérico
+Olhar à frente/à direita/para cima CTRL+9 do teclado numérico
+Olhar para trás/para direita/para cima CTRL+3 do teclado numérico
+Olhar para trás/para cima CTRL+2 do teclado numérico
+Olhar para trás/para esquerda/para cima CTRL+ 1 do teclado numérico
+Olhar à frente/à esquerda/para cima CTRL+7 do teclado numérico
+Olhar para baixo SHIFT+5 do teclado numérico
+Mover o ponto de visão para trás CTRL+ENTER
+Mover o ponto de visão para baixo SHIFT+BACKSPACE
+Mover o ponto de visão para frente CTRL+BACKSPACE
+girar a câmera para a esquerda CTRL+SHIFT+BACKSPACE
+girar a câmera para a direita CTRL+SHIFT+ENTER
+Mover o ponto de visão para cima SHIFT+ENTER
+Redefinir o ponto de visão ESPAÇO
+Redefinir deslocamento de visualização SHIFT+DEL do teclado numérico
+Ativar/desativar visualização de escolta CTRL+Q
+Alternar visualização de escolta para trás CTRL+SHIFT+W
+Alternar visualização de escolta para frente CTRL+W
+
+
+
+COMANDOS DE GIRO
+
+
+O giro lhe permite reposicionar rapidamente a aeronave sem pilotar em
+tempo real. Use estes comandos para fazer o giro.
+Ativar/desativar modo de giro Y
+Definir rumo norte/
+Atitude direta e nivelada BARRA DE ESPAÇO
+Congelar todos os movimentos 5 do teclado numérico
+Mover para frente 8 do teclado numérico
+Mover para trás 2 do teclado numérico
+Mover para a esquerda 4 do teclado numérico
+Mover para a direita 6 do teclado numérico
+Mover para cima lentamente Q ou F3
+Mover para cima rapidamente F4
+Mover para baixo lentamente A
+Mover para baixo rapidamente F1
+Congelar movimento vertical F2
+Girar para a esquerda 1 do teclado numérico
+Girar para a direita 3 do teclado numérico
+Mover nariz para cima 9
+Mover nariz para cima rapidamente F5
+Mover nariz para baixo F7 ou 0
+Mover nariz para baixo rapidamente F8
+Congelar inclinação do nariz F6
+Inclinação lateral à esquerda 7 do teclado numérico
+Inclinação lateral à direita 9 do teclado numérico
+Mover o ponto de visão para cima SHIFT+ENTER
+Mover o ponto de visão para baixo SHIFT+BACKSPACE
+Mover o ponto de visão para a esquerda CTRL+SHIFT+BACKSPACE
+Mover o ponto de visão para a direita CTRL+SHIFT+ENTER
+Mover o ponto de visão para frente CTRL+BACKSPACE
+Mover o ponto de visão para trás CTRL+ENTER
+
+
+
+COMANDOS DE VÁRIOS JOGADORES
+
+
+Ativar/desativar modo de rastreio CTRL+SHIFT+D
+Alternar entre outros jogadores CTRL+SHIFT+T
+Seguir outro jogador CTRL+SHIFT+F
+Alternar para o modo &lsquo;Observador' CTRL+SHIFT+O
+Exibir/ocultar janela de bate-papo CTRL+SHIFT+ (abre COLCHETE )
+Alternar foco para janela de bate-papo ENTER
+
+
+Para adicionar ou personalizar comandos de teclado, no menu Options
+(Opções), aponte para Controls (Controles) e
+clique em Assignments (Atribuições). Para aprender mais, consulte o
+artigo Usando o teclado no
+Centro de AprendizadoNotícias relacionadas
+Flight Simulator X: O jogo para apaixonados por aviação
+Tópicos relacionados
+Tradução Para Microsoft Flight Simulator Xcrack

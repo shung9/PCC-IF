@@ -16,14 +16,34 @@ body
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background-color: #121214;
+	background-color: var(--primary-300);
 }
+
+/*Variaveis*/
+body{
+    --primary-100:#1E2022;
+    --primary-200:#34373b;
+    --primary-300:#F0F5F9;
+    --accent-100:#788189;
+    --accent-200:#e1e4e6;
+    --text-100:#1E2022;
+    --text-200:#52616B;
+    --bg-100:#F0F5F9;
+    --bg-200:#C9D6DF;
+    --bg-300:#bfc7d1;
+    }
+
 .box 
 {
 	position: relative;
 	width: 300px;
 
 }
+
+.box .instrucao{
+	color: #52616B;
+}
+
 .box .inputBox 
 {
 	position: relative;
@@ -110,11 +130,16 @@ body
 
 
 h3, h1{
-	color: #1a73e8;
+	color: var(--primary-100);
 }
-	a{
-		text-decoration: none;
-	}
+a{
+	text-decoration: none;
+	color: #006b8f;
+}
+
+a:hover{
+	color: #52b4db;
+}
 
 
 
@@ -125,17 +150,17 @@ h3, h1{
 
 
    button{
-	--primary-color: #645bff;
+	--primary-color: #1E2022;
 	--secondary-color: #fff;
-	--hover-color: #0f0;
+	--hover-color: rgb(31, 197, 31);
 	--arrow-width: 10px;
 	--arrow-stroke: 2px;
 	box-sizing: border-box;
 	border: 0;
 	border-radius: 20px;
-	color: var(--secondary-color);
+	color: var(--primary-300);
 	padding: 1em 2em;
-	background: var(--primary-color);
+	background: var(--primary-100);
 	display: flex;
 	transition: 0.2s background;
 	align-items: center;
@@ -154,7 +179,7 @@ h3, h1{
   button .arrow {
 	margin-top: 1px;
 	width: var(--arrow-width);
-	background: var(--primary-color);
+	background: var(--primary-300);
 	height: var(--arrow-stroke);
 	position: relative;
 	transition: 0.2s;
@@ -186,6 +211,9 @@ h3, h1{
 	right: 0;
   }
 
-
-
-  
+  .resetPass{
+	background-color: #1E2022;
+  }
+  .resetPass:hover{
+	background-color: var(--hover-color);
+  }

@@ -12,7 +12,7 @@
         <div class="infoPost">
     
             <div class="text">
-                <h5 class="nome">{{ post.nome }}</h5><br>
+                <h5 class="nomeC">{{ post.nome }}</h5><br>
                 <h5 class="data">{{ post.criacao }}</h5>
 
                 {% if post.tipo == 'atividade' %}
@@ -119,15 +119,9 @@
                     {% endif %}
                     
                 {% else %}
-                    <span class="nome">Nenhum anexo associado</span>
+                    <span id="infoAnex"class="nomeC">Nenhum anexo associado</span>
                 {% endif %}
             </div>
-            
-            
-            
-            
-
-
     </div>
 
 </div>
