@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'home',
     'turmas',
     'calendario',
-    'bootstrap_calendar',
 
 ]
 

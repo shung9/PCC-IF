@@ -11,7 +11,6 @@ urlpatterns = [
     path('', include('home.urls')),
     path('turmas/', include('turmas.urls')),
     path('calendario/', include('calendario.urls')),
-    path('calendar/', CalendarView.as_view(), name='calendar')
 ]
 
 if settings.DEBUG:

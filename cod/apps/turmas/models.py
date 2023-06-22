@@ -10,8 +10,7 @@ class Turma(models.Model):
     cor = models.CharField(max_length=7, null=True, blank=True)
     codigo = models.CharField(max_length=5, null=False, blank=False)
     adm = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    participantes = models.ManyToManyField(
-        User, related_name='participantes', null=True, blank=True)
+    participantes = models.ManyToManyField(User, related_name='participantes', null=True, blank=True)
 
     def __str__(self):
         return self.nome
