@@ -22,7 +22,8 @@ def calendario(request, codigo):
       })
 
    context = {
-      'posts_json': json.dumps(out)
+      'posts_json': json.dumps(out),
+      'turma': turma
    }
 
    return render(request, 'calendario/calendario.html', context)

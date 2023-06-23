@@ -45,7 +45,7 @@
           <li onclick="tabs('atividades', this)" id="att" class="nav-link">Atividades</li>
           <li onclick="tabs('trabalhos', this)" id="tr" class="nav-link">Trabalhos</li>
           <li onclick="tabs('provas', this)" id="pr" class="nav-link">Provas</li>
-          <li onclick="tabs('aulas', this)" id="al" class="nav-link">Calendário</li>
+          <li onclick="tabs('aulas', this)" id="al" class="nav-link"><a href="{% url 'calendario' turma.codigo %}">Calendário</a></li>
         </div>
         </strong>
       </ul>
