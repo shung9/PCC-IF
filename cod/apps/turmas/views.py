@@ -1,21 +1,18 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail, EmailMessage
-from email.utils import make_msgid
+from django.core.mail import EmailMultiAlternatives
 from home.views import nameUser
 from .models import Turma, Post, Comentarios
 from .forms import CriarTurma, criarPost
 import random
-import string
-import threading
 from django.urls import reverse
-from .tasks import enviar_email
 from django.contrib import messages
 import os
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect
 from django.conf import settings
-from django.views.decorators.http import require_POST
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 @login_required()
 def turmas(request, codigo):
@@ -24,7 +21,6 @@ def turmas(request, codigo):
     turma = Turma.objects.get(codigo=codigo)
     posts = Post.objects.filter(turmaPertecente=turma)
     participantes = turma.participantes.all()
-    print(participantes)
 
     context = {
         'nameUser': cc,
@@ -35,8 +31,6 @@ def turmas(request, codigo):
         'turma': turma,
         'participantes': participantes,
     }
-
-    # enviar_email.delay(cc, cc)
 
     return render(request, 'turmas/turmas.html', context)
 
@@ -83,7 +77,6 @@ def criar(request):
         while Turma.objects.filter(codigo=cdg).exists():
             cdg = ''.join(random.choice(
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for x in range(5))
-            print(cdg)
 
         else:
             obj.codigo = cdg
@@ -112,27 +105,22 @@ def novoPost(request, codigo, tipo):
             obj.tipo = tipo
             obj.anexo = request.FILES.get('anexo', None)
             obj.save()
-            obj.anexo = request.FILES['anexo']
-            
-                
-
 
             participantes = turma.participantes.all()
             remetentes = [participante.email for participante in participantes]
 
-            # if tipo in ['prova', 'atividade']:
-            #    send_mail('Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
-            # else:
-            #    send_mail('Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
+            email_html = render_to_string('emails/novaPostagem.html', {'nome_usuario': request.user,'turma': turma.nome , 'titulo_postagem': obj.nome, 'conteudo_postagem': obj.descricao, 'url_postagem': 'http://127.0.0.1:1212/turmas/'+codigo})
+            email_text = strip_tags(email_html)
 
-           # if tipo in ['prova', 'atividade']:
-            # send_mail(
-            #   'Nova Postagem', f'Uma nova {tipo} foi criada na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
-            # else:
-            # send_mail(
-            #  'Nova Postagem', f'Um novo {tipo} foi criado na turma {turma}\n\n{obj.nome}', 'suport.class.school@gmail.com', remetentes)
+            if tipo in ['prova', 'atividade']:
+                Email = EmailMultiAlternatives(f'Uma Nova {tipo.capitalize()} foi postada', email_text, settings.EMAIL_HOST_USER, remetentes)
+            else:
+                Email = EmailMultiAlternatives(f'Um Novo {tipo.capitalize()} foi postado', email_text, settings.EMAIL_HOST_USER, remetentes)
 
-            # return redirect('turmas:turmas', codigo=codigo)
+
+            Email.attach_alternative(email_html, 'text/html')
+            Email.send()
+            return redirect('turmas:turmas', codigo=codigo)
 
         else:
             formPost = criarPost()
@@ -206,7 +194,6 @@ def calendario (request):
 def listar_participantes(request, codigo):
     turma = Turma.objects.get(codigo=codigo)
     participantes = turmas.participantes.all()
-    print(participantes)
 
     context = {
         'turma': turma,
