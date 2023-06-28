@@ -119,7 +119,7 @@ STATICFILES_DIRS = [
     'static/',
 ]
 
-STATIC_ROOT = '/Users/Emerson/Desktop/github OFC/PCC-IF/cod/staicfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 MEDIA_URL = "/uploads/"
