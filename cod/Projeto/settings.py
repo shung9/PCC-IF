@@ -119,6 +119,8 @@ STATICFILES_DIRS = [
     'static/',
 ]
 
+STATIC_ROOT = '/Users/Emerson/Desktop/github OFC/PCC-IF/cod/staicfiles'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 MEDIA_URL = "/uploads/"
 # Default primary key field type

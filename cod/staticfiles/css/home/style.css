@@ -1,0 +1,144 @@
+
+/* Botão de ENTRAR caso não esteja logado */
+
+.entrar {
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.entrar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entrar .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.entrar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.entrar:hover {
+  background-color: var(--hover-color);
+}
+
+.entrar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.entrar:hover .arrow:before {
+  right: 0;
+}
+
+
+
+ /* Card de Turmas */
+
+ .lado_da_outra{
+  display: inline-block;
+  justify-content: space-between;
+  margin: 5px;
+ }
+
+ .cardTurmas {
+  border-radius: 20px;
+  height: 130px;
+  width: 400px;
+
+  background-color: var(--primary-100);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-bottom-width: 0px;
+  padding: 0 5px 0 10px;
+  display: flex;
+  align-items: center;
+ }
+
+ .circle{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+
+  background-color: var(--bg-100);
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+ }
+
+ .cardLeft{
+    align-items: center;
+    width: 300px;
+ }
+
+
+
+.circle .circleNome{
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+.cardTurmas .cardNome{
+  margin-left: 10px;
+  color: #F0F5F9;
+  font-weight: bold;
+
+}
+
+ .cardTurmas button {
+  padding: 8px 25px;
+  display: block;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #52616B;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  animation: press 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+ }
+
+ .cardTurmas button:active{
+    transform: scale(0.9);
+ }
+
+ .cardTurmas button:hover {
+  background: #ffffff;
+  color: black;
+ }
+
+ .card a{
+  margin: 0;
+  padding: 0;
+ }
+
