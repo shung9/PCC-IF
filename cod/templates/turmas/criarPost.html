@@ -59,17 +59,21 @@
 
       
           <div class="form-group">
-            <div class="custom-file"> 
+            <div class="custom-file">
               <input type="file" class="custom-file-input" name="anexo" id="id_anexo" multiple>
               <label class="custom-file-label" for="id_anexo">Procurar arquivos</label>
+              <br><br>
               <span id="file-name"></span>
+              <br><br>
             </div>
             <script>
               document.getElementById("id_anexo").addEventListener("change", function() {
-              var fileName = this.files[0].name;
-              document.getElementById("file-name").textContent = fileName;
-  });
-  
+                var fileNames = "";
+                for (var i = 0; i < this.files.length; i++) {
+                  fileNames += this.files[i].name + ", ";
+                }
+                document.getElementById("file-name").textContent = fileNames.slice(0, -2);
+              });
             </script>
           </div>
         

@@ -139,6 +139,7 @@ def editarPost(request, post_id):
 
     post = Post.objects.get(id=post_id)
     turma = post.turmaPertecente
+    valores = criarPost(instance=post).initial
 
     if request.method == 'POST':
         formPost = criarPost(request.POST, instance=post)
@@ -151,7 +152,7 @@ def editarPost(request, post_id):
     else:
         formPost = criarPost(instance=post)
 
-    context = {'formPost': criarPost(instance=post), 'nameUser': cc, 'turma': turma}
+    context = {'formPost': valores, 'nameUser': cc, 'turma': turma}
     return render(request, 'turmas/editarPost.html', context)
 
 

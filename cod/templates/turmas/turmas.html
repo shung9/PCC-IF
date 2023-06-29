@@ -80,17 +80,20 @@
                 <p class="data">{{ aviso.criacao }}</p>
             </div>
         </div>
-        <div class="hamburger">
-            {% if request.user == turma.adm %}
-            <form action="{% url 'turmas:editarPost' aviso.id %}" method="post">
-                {% csrf_token %}
-                <!-- <input class="custom-input" type="submit"  value="Apagar"> -->
-                <input class="custom-input" type="submit"  value="Apagar">
 
-            </form>
-
-            {% endif %}
-        </div>
+            <div class="hamburger">
+                {% if request.user == turma.adm %}
+                    <form action="{% url 'turmas:excluirPost' aviso.id %}" method="post">
+                        {% csrf_token %}
+                        <input class="btn btn-danger" type="submit" value="Apagar">
+                    </form>
+            
+                    <form action="{% url 'turmas:editarPost' aviso.id %}" method="post">
+                        {% csrf_token %}
+                        <input class="btn btn-primary" type="submit" value="Editar">
+                    </form>
+                {% endif %}
+            </div>
     </div>
 </a>
         {% empty %}
@@ -123,13 +126,18 @@
 
             <div class="hamburger">
                 {% if request.user == turma.adm %}
+                    <form action="{% url 'turmas:excluirPost' atividade.id %}" method="post">
+                        {% csrf_token %}
+                        <input class="custom-input" type="submit" value="Apagar">
+                    </form>
             
-            <form action="{% url 'turmas:excluirPost' atividade.id %}" method="post">
-                {% csrf_token %}
-                <input class="custom-input" type="submit"  value="Apagar">
-            </form>
-            {% endif %}
+                    <form action="{% url 'turmas:editarPost' atividade.id %}" method="post">
+                        {% csrf_token %}
+                        <input class="custom-input" type="submit" value="Editar">
+                    </form>
+                {% endif %}
             </div>
+            
                 
         </div>
         </a>
@@ -160,15 +168,17 @@
                 </div>
 
                 <div class="hamburger">
-                    
                     {% if request.user == turma.adm %}
-                    
-                    <form action="{% url 'turmas:excluirPost' trabalho.id %}" method="post">
-                        {% csrf_token %}
-                        <input class="custom-input" type="submit"  value="Apagar">
-                    </form>
+                        <form action="{% url 'turmas:excluirPost' trabalho.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="custom-input" type="submit" value="Apagar">
+                        </form>
+                
+                        <form action="{% url 'turmas:editarPost' trabalho.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="custom-input" type="submit" value="Editar">
+                        </form>
                     {% endif %}
-                    
                 </div>
             </div>
         </a>
@@ -200,15 +210,17 @@
             </div>
 
             <div class="hamburger">
-                
-            {% if request.user == turma.adm %}
+                {% if request.user == turma.adm %}
+                    <form action="{% url 'turmas:excluirPost' prova.id %}" method="post">
+                        {% csrf_token %}
+                        <input class="custom-input" type="submit" value="Apagar">
+                    </form>
             
-            <form action="{% url 'turmas:excluirPost' prova.id %}" method="post">
-                {% csrf_token %}
-                <input class="custom-input" type="submit"  value="Apagar">
-            </form>
-            {% endif %}
-                
+                    <form action="{% url 'turmas:editarPost' prova.id %}" method="post">
+                        {% csrf_token %}
+                        <input class="custom-input" type="submit" value="Editar">
+                    </form>
+                {% endif %}
             </div>
                 
         </div>
