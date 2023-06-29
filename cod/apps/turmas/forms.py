@@ -10,6 +10,6 @@ class CriarTurma(forms.ModelForm):
 class criarPost(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['nome', 'descricao', 'dataEntrega', 'anexo']
+        fields = ['nome', 'descricao', 'valor', 'dataEntrega', 'anexo']
 
 

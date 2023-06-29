@@ -68,13 +68,15 @@
       </div>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div class="infosUser">
-               <img src="{% static 'imgs/turmas/user.png' %}" alt="" srcset="">{{user.username}} 
-                <br><br>
-                <img src="{% static 'imgs/turmas/email.png' %}" alt="" srcset="">{{user.email}}
-                  <br> 
-                <a href="accounts/registrar"><img src="{% static 'imgs/turmas/criar.png' %}" alt="" srcset="">Criar conta</a><br>
-                <img src="{% static 'imgs/turmas/sair.png' %}"  alt=""><a href="{% url 'accounts:logout' %}">Logout</a>
-              
+          <center>
+               <h4>{{user.username}}</h4> 
+               <h6>{{user.email}}</h6>
+
+               <br>
+
+               <a href="{% url 'accounts:logout' %}"><button class="sair">Sair</button></a>
+
+          </center>
               </div>
             </div>
     </div>

@@ -156,6 +156,26 @@ header {
     transition: 0.3s;
   }
 
+  h6 {
+    margin: 10px;
+  }
+
+  .sair{
+    display: block;
+    width: 90%;
+    padding: 5px;
+    background-color: #f34242;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .sair:hover{
+    background-color: #b32727;
+    color: #F0F5F9;
+  }
+
 
   /* Responsividade */
 @media (max-width: 930px){

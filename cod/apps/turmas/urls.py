@@ -9,6 +9,7 @@ urlpatterns = [
     path('criar', views.criar, name="criar"),
     path('excluirComentario/<int:comentario_id>', views.excluirComentario, name="excluirComentario"),
     path('excluirPost/<int:post_id>', views.excluirPost, name="excluirPost"),
+    path('editarPost/<int:post_id>', views.editarPost, name="editarPost"),
     path('<str:codigo>', views.turmas, name='turmas'),
     path('<str:codigo>/<str:tipo>/novopost', views.novoPost, name="criarPost"),
     path('<str:codigo>/<int:id>', views.listarPost, name='post'),

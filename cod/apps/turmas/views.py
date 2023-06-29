@@ -133,6 +133,30 @@ def novoPost(request, codigo, tipo):
     return render(request, 'turmas/criarPost.html', context)
 
 
+@login_required
+def editarPost(request, post_id):
+    cc = nameUser(request)
+
+    post = Post.objects.get(id=post_id)
+    turma = post.turmaPertecente
+
+    if request.method == 'POST':
+        formPost = criarPost(request.POST, instance=post)
+
+        if formPost.is_valid():
+            obj = formPost.save(commit=False)
+            obj.anexo = request.FILES.get('anexo', None)
+            obj.save()
+            return redirect('turmas:turmas', codigo=post.turmaPertecente.codigo)
+    else:
+        formPost = criarPost(instance=post)
+
+    context = {'formPost': criarPost(instance=post), 'nameUser': cc, 'turma': turma}
+    return render(request, 'turmas/editarPost.html', context)
+
+
+
+
 @login_required()
 def listarPost(request, codigo, id):
     cc = nameUser(request)
@@ -158,16 +182,19 @@ def listarPost(request, codigo, id):
     return render(request, 'turmas/post.html', context)
 
 
+def excluirPost(request, post_id):
+    post = Post.objects.get(id=post_id)
+    post.delete()
+    return redirect(request.META.get('HTTP_REFERER', '/'))
+
+
 def excluirComentario(request, comentario_id):
     comentario = Comentarios.objects.get(id=comentario_id)
     comentario.delete()
     return redirect(request.META.get('HTTP_REFERER', '/'))
 
 
-def excluirPost(request, post_id):
-    post = Post.objects.get(id=post_id)
-    post.delete()
-    return redirect(request.META.get('HTTP_REFERER', '/'))
+
 
 @login_required
 def excluirAnexo(request, post_id):
@@ -187,9 +214,6 @@ def excluirAnexo(request, post_id):
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-
-def calendario (request):
-    return render(request, 'turmas:rew.html')
 
 def listar_participantes(request, codigo):
     turma = Turma.objects.get(codigo=codigo)

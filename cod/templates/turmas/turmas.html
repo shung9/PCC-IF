@@ -82,10 +82,13 @@
         </div>
         <div class="hamburger">
             {% if request.user == turma.adm %}
-            <form action="{% url 'turmas:excluirPost' aviso.id %}" method="post">
+            <form action="{% url 'turmas:editarPost' aviso.id %}" method="post">
                 {% csrf_token %}
+                <!-- <input class="custom-input" type="submit"  value="Apagar"> -->
                 <input class="custom-input" type="submit"  value="Apagar">
+
             </form>
+
             {% endif %}
         </div>
     </div>

@@ -41,6 +41,15 @@
 
           <br><br>
 
+          {% if tipo != 'aviso' %}
+          <div class="form-group">
+            <label for="valor">Valor</label>
+            <input type="number" class="form-control" id="id_valor" name="valor" placeholder="Valor">
+          </div>
+
+          <br><br>
+          {% endif %}
+
           <div class="form-group">
             <label for="data">Data:</label>
             <input type="date" class="form-control" id="id_dataEntrega" name="dataEntrega">
@@ -50,21 +59,20 @@
 
       
           <div class="form-group">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="id_anexo" name="anexo" multiple>
-            <label class="custom-file-label" for="customFile">Navegar</label>
-            <input type="file" class="custom-file-input" name="anexo" id="id_anexo" multiple>
-            <label class="custom-file-label" for="id_anexo">Procurar arquivos</label>
-            <span id="file-name"></span>
+            <div class="custom-file"> 
+              <input type="file" class="custom-file-input" name="anexo" id="id_anexo" multiple>
+              <label class="custom-file-label" for="id_anexo">Procurar arquivos</label>
+              <span id="file-name"></span>
+            </div>
+            <script>
+              document.getElementById("id_anexo").addEventListener("change", function() {
+              var fileName = this.files[0].name;
+              document.getElementById("file-name").textContent = fileName;
+  });
+  
+            </script>
           </div>
-          <script>
-            document.getElementById("id_anexo").addEventListener("change", function() {
-            var fileName = this.files[0].name;
-            document.getElementById("file-name").textContent = fileName;
-});
-
-          </script>
-        </div>
+        
           <br><br>
 
 

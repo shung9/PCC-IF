@@ -1,0 +1,50 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+<br>
+
+<div class="conta">
+    <p>Editando uma publicação em:</p> 
+        <div class="perfil">{{turma.nome|slice:":2"|upper}}</div>
+
+        <div class="dadosUser">
+            <p>{{turma.nome}}</p>
+            <p>{{turma.descricao}}</p>  
+        </div>
+
+        <div class="mudarconta">
+            <a id="redirect" href="{% url 'home' %}" class="btn btn-dark">Mudar de Turma</a>
+        </div>
+      </div>
+
+<br>
+
+<div class="conta">
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{formPost}}
+        
+          <br><br>
+
+
+        <center>
+
+          <button id="create" type="submit" class="btn btn-info">Criar</button>
+          <a id="cancel" class="btn btn-secondary" onclick="history.go(-1);">Cancelar</a>
+        
+        </center>
+
+    </form>
+
+</div>
+
+
+
+
+
+{% endblock %}
