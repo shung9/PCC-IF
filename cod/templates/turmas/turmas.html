@@ -45,16 +45,16 @@
                 </div>
             </div>
 
-            <div class="dropdown editar">
-                <button class="createAviso dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="{% url 'turmas:editarTurma' codigo=turma.codigo %}">
+                <span class="createAviso">
                     <img src="{% static 'svg/gear.svg' %}">
-                        Editar
-                </button>
+                    Editar
+                </span>
+            </a>
+            
+            
                     
-                <div class="dropdown-menu aditarTurmaBotão" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item aditarTurma" href="{% url 'turmas:criarPost' turma.codigo 'aviso' %}"><img src="{% static 'svg/notice.svg' %}">aviso</a>
-                    </div>
-                </div>
+
     </div>
 
 

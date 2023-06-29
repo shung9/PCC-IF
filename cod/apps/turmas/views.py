@@ -89,6 +89,27 @@ def criar(request):
     return render(request, 'turmas/criar.html', context)
 
 
+def editarTurma(request, codigo):
+    cc = nameUser(request)
+
+    turma = Turma.objects.get(codigo=codigo)
+    valores = CriarTurma(instance=turma).initial
+
+    if request.method == 'POST':
+        formPost = CriarTurma(request.POST, instance=turma)
+
+        if formPost.is_valid():
+            formPost.save()
+            return redirect('turmas:turmas', codigo=codigo)
+
+        else:
+            formPost = CriarTurma(instance=post)
+
+    context = {'nameUser': cc, 'formPost': valores, 'participantes': turma.participantes.all()}
+    return render(request, 'turmas/criar.html', context)
+
+
+
 @login_required()
 def novoPost(request, codigo, tipo):
     cc = nameUser(request)
