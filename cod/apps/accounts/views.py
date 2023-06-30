@@ -6,27 +6,38 @@ from django.core.validators import validate_email
 
 
 def login(request):
-    if request.method != 'POST':
-        return render(request, 'accounts/login.html')
+    # um simple
+    # if request.method == 'POST'; 
+    if request.method == 'POST':
+        #return render(request, 'accounts/login.html') #nao vejo a utilidade
 
     username = request.POST.get('username')
     password = request.POST.get('password')
 
-    user = auth.authenticate(request, username=username, password=password)
+    # faz a verificação aqui, se o username existe, de os czmpos username e password nao sao vazios
+    if username and password: #se nao sao empty(vazio, null etc..)
+        if User.objects.filter(username=username).exists(): # se tem um usuário com username 
+            # verificar a autenticidade 
+            user = authenticate(username=username, password=password)
 
-    if not user:
-        messages.error(request, 'Usuário ou senha inválidos')
-        return render(request, 'accounts/login.html')
+    if user:
+           login(request, user)
+           return redirect('home')
+        
     
     else:
-        auth.login(request, user)
-        return redirect('home')
-
+        messages.error(request, 'Usuário ou senha inválidos')
+        return redirect('login')
 
 
 def registrar(request):
-    if request.method != 'POST':
-        return render(request, 'accounts/registrar.html')
+    #se queres redireccionar todas os usuários conectados para página
+    # bloqueiar o acesso a página login e registrar
+
+    # if request.user.is_authenticated:
+        #return redirect('home')
+    if request.method == 'POST':
+        #return render(request, 'accounts/registrar.html') # nao vejp a utilidade 
 
     username = request.POST.get('username')
     email = request.POST.get('email')
@@ -47,6 +58,7 @@ def registrar(request):
     if User.objects.filter(email=email).exists():
         messages.error(request, 'já existe uma conta com esse email')
         return render(request, 'accounts/registrar.html')
+    #olha o login 
 
     user = User.objects.create_user(username=username, email=email, password=password)
     user.save()
