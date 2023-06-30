@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+# se queres perdonalizar o seu model user podes usar 'AbstractUser'
 
 class Usuario(User):
 <<<<<<< HEAD
