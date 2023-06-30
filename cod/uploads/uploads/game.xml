@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<game>
+    <language>14</language>
+    <graphic>
+        <display>
+            <width>800</width>
+            <height>600</height>
+            <gamma>1</gamma>
+            <fullscreen>true</fullscreen>
+            <vsync adaptive="true">true</vsync>
+            <userConfirmed>false</userConfirmed>
+            <previousWidth>800</previousWidth>
+            <previousHeight>600</previousHeight>
+            <scaling>0.500000</scaling>
+            <brightness>1.000000</brightness>
+        </display>
+        <scalability>
+            <gpuPerformanceClass>auto</gpuPerformanceClass>
+            <performanceClass>Low</performanceClass>
+            <viewDistanceCoeff>0.500000</viewDistanceCoeff>
+            <lodDistanceCoeff>0.500000</lodDistanceCoeff>
+            <terrainLODDistanceCoeff>0.500000</terrainLODDistanceCoeff>
+            <foliageViewDistanceCoeff>0.500000</foliageViewDistanceCoeff>
+            <volumeMeshTessellationCoeff>2.000000</volumeMeshTessellationCoeff>
+            <tyreTracksSegmentsCoeff>0.000000</tyreTracksSegmentsCoeff>
+            <useTerrainNormalMapping>false</useTerrainNormalMapping>
+        </scalability>
+        <renderer>D3D_11</renderer>
+    </graphic>
+    <audio enable="true" volume="1.000000"/>
+    <input>
+        <joystick enable="true" vibration="false" deadzone="0.14"/>
+        <mouse enable="true"/>
+        <keyboard enable="true"/>
+        <headTracking active="true" trackir="true" tobiieyex="true"/>
+    </input>
+    <logging>
+        <file enable="true" filename="log.txt"/>
+        <console enable="true"/>
+    </logging>
+    <development>
+        <controls>false</controls>
+    </development>
+    <startMode>6</startMode>
+</game>

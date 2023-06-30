@@ -1,0 +1,129 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+
+
+<div class="content">
+    <div class="informacoes">
+        <div class="infoPost">
+    
+            <div class="text">
+                <h5 class="nomeC">{{ post.nome }}</h5><br>
+                <h5 class="data">{{ post.criacao }}</h5>
+
+                {% if post.tipo == 'atividade' %}
+                <p class="valor">Valor: {{ post.valor }}</p>
+                <div class="entrega">
+                    <p class="dataEntrega">Entrega: {{ post.dataEntrega }}</p>
+                </div>
+                {% endif %}
+
+                {% if post.tipo == 'trabalho' %}
+                <p class="valor">Valor: {{ post.valor }}</p>
+                <div class="entrega">
+                    <p class="dataEntrega">Entrega: {{ post.dataEntrega }}</p>
+                </div>
+                {% endif %}
+                
+
+              
+                    <div class="descricao">
+                        <span class="textDescricao">
+                            {{ post.descricao }}
+                        </span> 
+                    </div>
+
+                    <div class="novoComentario">
+                        <div class="perfil">
+                            {{ nameUser.name }}
+                        </div>
+
+
+                        <form method="POST" action="{{ url }}">
+                            {% csrf_token %}
+
+                            <div class="comment-input-container">
+                                <input type="text" placeholder="Adicionar comentário para a turma" name="coment">
+                                <button type="submit" class="submit-button">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M hhikbc"><path d="M2 3v18l20-9L2 3zm2 11l9-2-9-2V6.09L17.13 12 4 17.91V14z"></path></svg>
+                                </button>
+                              </div>
+                        </form>   
+
+                                                        
+ 
+
+                    </div>
+
+                    
+                    {% for comentario in comentarios %}
+                    <div class="comentarios">
+                            
+
+
+
+                            <div class="comentario"> 
+                                <div class="comentUser">
+                                    <div class="perfilUser">
+                                        <div class="perfil">
+                                            {{ comentario.dono|upper|slice:":2" }}
+                                        </div>
+                                    </div>
+
+
+                                    <div class="pp">
+                                        <h5 class="valor">{{ comentario.dono|upper }}</h5>
+                                        <p class="coment"><strong> {{ comentario.comentario }} </strong></p>
+                                    </div>
+
+                                    
+
+                                </div>   
+
+                                <div class="botao">
+                                    {% if comentario.dono == request.user %}
+                                    <form action="{% url 'turmas:excluirComentario' comentario.id %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger excluir">
+                                            <img src="{% static 'svg/delete.svg' %}">
+                                        </button>
+                                    </form>
+                                {% endif %}
+                                </div>
+
+                            </div>
+                            
+                    </div>
+                    <br>
+                    {% endfor %}
+
+                </div>
+
+
+            </div>
+
+            <div class="anexo">
+                {% if post.anexo %}
+                    <span class="nomeAnex"><a href="{{ post.anexo.url }}" target="_blank">Ver Anexo</a></span>
+                    
+                    {% if user == post.dono or user.is_staff %}
+                    <form class="excluir-anexo-form" action="{% url 'turmas:excluirAnexo' post_id=post.id %}" method="post">
+                        {% csrf_token %}
+                        <br><br>
+                        <button class="excluir-anexo-button" type="submit">Excluir Anexo</button>
+                    </form>
+                    {% endif %}
+                    
+                {% else %}
+                    <span id="infoAnex"class="nomeC">Nenhum anexo associado</span>
+                {% endif %}
+            </div>
+    </div>
+
+</div>
+
+{% endblock %}

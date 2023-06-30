@@ -1,0 +1,110 @@
+{% extends 'sidebar.html' %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+
+  {% if request.user.is_authenticated %} 
+  
+
+    <center>
+        <h1>Suas Turmas</h1>
+        <br>
+        {% for turma in turmasadm %}
+        <div class="lado_da_outra">
+
+          <div class="cardTurmas">
+
+            <div class="circle">
+              <span class="circleNome">{{ turma.nome|slice:":2"|upper }}</span>
+            </div>
+
+            <div class="cardLeft">
+
+              <div class="cardNome">
+                <span>{{ turma.nome }}</span>
+                <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
+              </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+        {% endfor %}
+
+
+        {% for turma in turmaspart %}
+        <div class="lado_da_outra">
+
+          <div class="cardTurmas">
+
+            <div class="circle">
+              <span class="circleNome">{{ turma.nome|slice:":2"|upper }}</span>
+            </div>
+
+            <div class="cardLeft">
+
+              <div class="cardNome">
+                <span>{{ turma.nome }}</span>
+                <a href="{% url 'turmas:turmas' turma.codigo %}"><button>Entrar</button></a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        {% endfor %}
+      
+      </center>
+      
+          <br>
+
+      
+      <br>
+
+    {% else %}
+
+    <style>
+
+      .cotainer{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+      }
+
+
+
+    </style>
+
+
+    <div class="cotainer">
+      <div class="content">
+        <center>
+        <h1>Faça login para acessar suas turmas</h1>
+        <br>
+        <a href="accounts/login">
+          <button class="entrar">
+            Entrar
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </button>
+        </a>
+        </center>
+      </div>
+    </div>
+    
+        
+    {% endif %}
+    
+
+    
+    {% endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        /* Estilos CSS para o e-mail */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.5s;
+            text-decoration: none;
+        }
+
+        .btn:hover{
+            background-color: #0c54a0;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nova Postagem</h1>
+      	<br>
+        <p>Olá, <strong>{{ nome_usuario }}</strong>!</p>
+        <p>Uma nova postagem foi criada na turma <strong>{{ turma }}</strong>. Confira os detalhes abaixo:</p>
+        
+        <h2>{{ titulo_postagem }}</h2>
+        <p>{{ conteudo_postagem }}</p>
+        
+        <p>Para visualizar a postagem completa, clique no botão abaixo:</p>
+          <br>
+        <center>
+          <p><a class="btn" href="{{ url_postagem }}">Ver Postagem</a></p>
+          <center>
+
+        <div class="footer">
+            <p>Este é um e-mail automático. Por favor, não responda.</p>
+        </div>
+    </div>
+</body>
+</html>

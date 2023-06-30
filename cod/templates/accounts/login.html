@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="{% static '/css/login/login.css' %}">
+</head>
+<body>
+
+
+	<form action="{% url 'accounts:login' %}" method="POST">
+		{% csrf_token %}
+			<div class="box">
+			<center>
+				<h1>Entre em sua conta</h1><br>
+			</center>
+
+		{% include 'parciais/_alerts.html' %}
+		
+
+		<div class="inputBox">
+			<input type="text" placeholder="username" name="username" required>
+		</div>
+
+		<br>
+
+		<div class="inputBox">
+			<input type="Password" id="pswrd" placeholder="Password" name="password" onkeyup="checkPassword(this.value)" required>
+			<span id="toggleBtn"></span>
+		</div>
+
+		<br>
+
+			<center>
+				<button type="submit">
+					Entrar
+					<div class="arrow-wrapper">
+						<div class="arrow"></div>
+					</div>
+				</button>
+
+			</form>
+
+				<br>
+                <h3 class="criarConta">Não tem uma conta? <a href="{% url 'accounts:registrar' %}">Criar</a></h3>
+				<h3>Esqueceu a senha? <a href="{% url 'accounts:reset_password' %}">Redefinir</a></h3>
+				
+			</center>
+	</div>
+
+
+   <script src="{% static '/javascript/accounts/login.js' %}"></script>
+
+
+</body>
+</html>

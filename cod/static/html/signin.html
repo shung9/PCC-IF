@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="/css/login/login.css">
+
+</head>
+<body>
+	<div class="box">
+		<center>
+		<h1>Entre em sua conta</h1><br>	
+		</center>
+		
+		<form action="">
+
+		<div class="inputBox">
+			<input type="email" placeholder="Email">
+		</div>
+		<br>
+		<div class="inputBox">
+			<input type="Password" id="pswrd" placeholder="Password" onkeyup="checkPassword(this.value)">
+			<span id="toggleBtn"></span>
+		</div>
+
+<br>
+			<center>
+				<button>
+					Entrar
+					<div class="arrow-wrapper">
+						<div class="arrow"></div>
+				
+					</div>
+				</button>
+
+				<br>
+                <h3>Não tem uma conta? <a href="/html/signup.html">Criar</a></h3>
+				
+			</center>
+	</div>
+
+
+   <script src="/javascript/login/login.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block content %}
+{% endblock %}
+
+{% block card %}
+<br>
+
+<div class="conta">
+    <p>Editando uma publicação em:</p> 
+        <div class="perfil">{{turma.nome|slice:":2"|upper}}</div>
+
+        <div class="dadosUser">
+            <p>{{turma.nome}}</p>
+            <p>{{turma.descricao}}</p>  
+        </div>
+
+        <div class="mudarconta">
+            <a id="redirect" href="{% url 'home' %}" class="btn btn-dark">Mudar de Turma</a>
+        </div>
+      </div>
+
+<br>
+
+<div class="conta">
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="nomeTurma">Nome</label>
+          <input type="text" class="form-control" id="id_nome" name="nome" value="{{formPost.nome}}" maxlength="50">
+        </div>
+
+        <br><br>
+
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <textarea class="form-control" id="id_descricao" name="descricao" rows="5" maxlength="250" placeholder="Descrição de no máximo 250">{{formPost.descricao}}</textarea>
+        </div>
+
+        <br><br>
+
+        {% if tipo != 'aviso' %}
+        <div class="form-group">
+          <label for="valor">Valor</label>
+          <input type="number" class="form-control" id="id_valor" name="valor" value="{{formPost.valor}}" placeholder="Valor">
+        </div>
+
+        <br><br>
+        {% endif %}
+
+        <div class="form-group">
+          <label for="data">Data:</label>
+          <input type="date" class="form-control" id="id_dataEntrega" value="{{formPost.data}}" name="dataEntrega">
+        </div>
+
+        <br><br>
+
+    
+        <div class="form-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="anexo" value="{{formPost.anexo}}" id="id_anexo" multiple>
+            <label class="custom-file-label" for="id_anexo">Procurar arquivos</label>
+            <br><br>
+            <span id="file-name">{{formPost.anexo}}</span>
+            <br><br>
+          </div>
+          <script>
+            document.getElementById("id_anexo").addEventListener("change", function() {
+              var fileNames = "";
+              for (var i = 0; i < this.files.length; i++) {
+                fileNames += this.files[i].name + ", ";
+              }
+              document.getElementById("file-name").textContent = fileNames.slice(0, -2);
+            });
+          </script>
+        </div>
+        
+        
+          <br><br>
+
+
+        <center>
+
+          <button id="create" type="submit" class="btn btn-info">Criar</button>
+          <a id="cancel" class="btn btn-secondary" href="{% url 'turmas:turmas' turma.codigo %}">Cancelar</a>
+        
+        </center>
+
+    </form>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,186 @@
+/*Variaveis*/
+body{
+--primary-100:#1E2022;
+--primary-200:#34373b;
+--primary-300:#F0F5F9;
+--accent-100:#788189;
+--accent-200:#e1e4e6;
+--text-100:#1E2022;
+--text-200:#52616B;
+--bg-100:#F0F5F9;
+--bg-200:#C9D6DF;
+--bg-300:#bfc7d1;
+}
+
+.content{
+    margin: 10px 135px;
+}
+
+.createAviso{
+    background-color: #52616B;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    height: 45px;
+
+    margin: 7px;
+    padding: 5px 15px;
+    padding-left: 5px;
+    border-radius: 20px;
+    border: none;
+    
+
+    align-items: center;
+    text-align: center;
+
+    transition: 0.3s;
+    animation: press 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.createAviso button:active{
+    transform: scale(0.9);
+}
+
+.createAviso:hover{
+    background-color: var(--primary-100);
+}
+
+.dropdowns{
+    align-items: center;
+}
+
+.dropdown-menu{
+    margin-top: 10px;
+}
+
+
+.trabalho{
+    margin-left: 2px;
+}
+
+.aviso img, .trabalho img, .copiar img{
+    margin-right: 2px;
+}
+
+.dropdowns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cdgTurma{
+    border: 1px solid var(--primary-100);
+    height: 45px;
+    width: 130px;
+    background-color: var(--primary-100);
+    border-radius: 5px;
+}
+
+.cdgTurma p{
+    font-size: 13px;
+    padding-left: 5px;
+    color: var(--primary-300);
+
+}
+
+.cdgTurma span{
+    font-size: 20px;
+    padding-left: 5px;
+    color: var(--primary-300);
+
+    position: relative;
+    display: flex;
+    top: -20px;
+}
+
+.conteinerCodigo{
+    display: flex;
+    align-items: center;
+}
+
+/*  CARD DAS ATIVIDADES */
+
+.cardInformacoes{
+    height: 90px;
+    width: 100%;
+
+    border: solid 1px var(--primary-200);
+    background-color: var(--primary-100);
+
+    border-radius: 20px;
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    justify-content: space-between;
+    
+    transition: 0.3s;
+    cursor: pointer;
+}
+.cardInformacoes:hover{
+    background: var(--primary-200);
+}
+
+
+.info{
+    display: flex;
+    align-items: center;
+}
+
+.activity{
+    height: 70px;
+    width: 70px;
+
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.activity img{
+    height: 45px;
+    width: 45px;
+}
+
+.text{
+    display: block;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+
+.nome{
+    font-size: 25px;
+    color: #fff;
+    margin: 0;
+}
+
+.data, .valor, .dataEntrega{
+    margin: 0;
+}
+
+.destaque{
+    color: aqua;
+}
+
+.logoturma{
+    height: 3px;
+}
+
+
+  .hamburger {
+    display: flex;
+    margin-right: 10px;
+}
+
+.hamburger input.btn-primary{
+    margin-left: 10px !important;
+}
+
+  
