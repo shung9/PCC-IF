@@ -2,7 +2,11 @@ from pathlib import Path
 import os
 import sys
 from django.contrib.messages import constants
+<<<<<<< HEAD
 #from decouple import config
+=======
+from decouple import config
+>>>>>>> f100748969a7d827a7af745ea8431d122310e3e5
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -140,6 +144,7 @@ MESSAGE_TAGS = {
 }
 
 # Configurações de envio de e-mail
+<<<<<<< HEAD
 ##EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 ##EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 ##EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
@@ -147,6 +152,15 @@ MESSAGE_TAGS = {
 ##EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 ##EMAIL_HOST = config('EMAIL_HOST')
 ##DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+=======
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_HOST = config('EMAIL_HOST')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+>>>>>>> f100748969a7d827a7af745ea8431d122310e3e5
 
 
 

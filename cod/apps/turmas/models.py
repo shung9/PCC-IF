@@ -35,4 +35,7 @@ class Comentarios(models.Model):
     comentario = models.TextField(max_length=240, null=True, blank=True)
     dono = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f100748969a7d827a7af745ea8431d122310e3e5
